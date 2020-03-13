@@ -14,7 +14,7 @@
  * Domain Path: /lang/
  *
  * @package WordPress
- * @author  Chris J. Zähller <chris@messengerwebdesign.com>
+ * @author  Chris J. Zähller
  * @since   1.0.0
  */
 if ( ! defined( 'ABSPATH' ) ) {
