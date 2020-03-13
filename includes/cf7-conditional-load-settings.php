@@ -31,8 +31,6 @@
 		<?php settings_fields( 'cf7_conditional' ); // Render necessary invisible fields ?>
 		<?php do_settings_sections( 'cf7_conditional' ); ?>
 		<input name="Submit" type="submit" value="<?php esc_attr_e( 'Save Changes', 'cf7-conditional-load' ); ?>" class="button button-primary" />
-		<!--input name="reset" type="submit" class="button-secondary reset" value="<?php //esc_attr_e('Reset Defaults', 'cf7-conditional-load'); ?>" /-->
-
 	</form>
 </div>
 <?php
@@ -68,13 +66,13 @@
 			$settings_section, // The name of the settings section: 'cf7_conditional_options_section'
 			__( 'Load Contact Form 7 scripts only on pages that need them', 'cf7-conditional-load' ), // The section title
 			'cf7_conditional_load_text', // Callback parameter to display some explanatory text
-			$page // page slug: 'cf7_conditional'
+			$page // page slug: 'cf7_conditional-load'
 		);
 
 		// Add fields to that section
 		add_settings_field(
 			$section_name, // The name of the setting for which this field is rendered: 'cf7_conditional_load'
-			__('Pages to Include', 'cf7-conditional-load' ), // Settings field title
+			__( 'Pages or posts to include:', 'cf7-conditional-load' ), // Settings field title
 			'cf7_conditional_option_render', // Field to render
 			$page, // page slug: 'cf7_conditional'
 			$settings_section // Where to render the field: 'cf7_conditional_options_section'
@@ -85,7 +83,7 @@
 		$validated = sanitize_textarea_field( $input );
 		if (($validated !== $input) || (!preg_match("/^([a-z\d\-]([\n\r])*)*$/",$validated))) {
 			$type = 'error';
-			$message = __( 'Please enter page <abbr>ID</abbr>s (numerical) or page slugs (lowercase letters, numerals, &amp; hyphens) only. One <abbr>ID</abbr> per line. No spaces or other characters allowed.', 'cf7-conditional-load' );
+			$message = __( 'Please enter page <abbr>ID</abbr>s (numerical) or page slugs (lowercase letters, numerals, &amp; hyphens) only. One <abbr>ID</abbr> per line. No spaces or other characters allowed.', 'cf7-conditional-load', 'cf7-conditional-load' );
 			add_settings_error(
 				'cf7_conditional_load', // option being updated
 				esc_attr( 'settings_updated' ), // CSS class
@@ -97,17 +95,17 @@
 		return $validated;
 
 		// DEBUGGING
-		// $array = explode('\n\r', $validated); // split string at newline
-		// echo '<h3>CF7 scripts load on these pages:</h3><ul>';
-		// foreach($array as $validated) //loop over values
-		//   {
-		//     echo '<li>' . $validated . '</li>' . PHP_EOL; // print IDs
-		//   }
-		// echo '</ul>';
+		$array = explode('\n\r', $validated); // split string at newline
+		echo '<h3>' . __( 'CF7 scripts load on these pages:', 'cf7-conditional-load' ) . '</h3><ul>';
+		foreach($array as $validated) //loop over values
+		  {
+		    echo '<li>' . $validated . '</li>' . PHP_EOL; // print IDs
+		  }
+		echo '</ul>';
 	}
 
 	function cf7_conditional_load_text() {
-		echo '<p>In its default settings, Contact Form 7 loads its JavaScript and CSS stylesheet on every page. This slows page loading and taxes server and client resources. In worst case scenarios, slow page loading can ding your <abbr>SEO</abbr> or drive away potential users. This setting gives you control over which pages the scripts load on.</p><figure><img style="max-width:100%;height:auto;border:5px solid gray;border-radius:5px;" src="'. CF7_CONDITIONAL_URL .'images/page-id.png" alt="How to find page or post ID" width="1024" height="488" class="size-full" srcset="'. CF7_CONDITIONAL_URL .'images/page-id.png 1024w, '. CF7_CONDITIONAL_URL .'images/page-id-300x143.png 300w, '. CF7_CONDITIONAL_URL .'images/page-id-768x366.png 768w, '. CF7_CONDITIONAL_URL .'images/page-id-1024x488.png 1024w, '. CF7_CONDITIONAL_URL .'images/page-id-586x279.png 586w" sizes="(max-width: 1188px) 100vw, 1188px"><figcaption></figcaption>This is the page (or post) <abbr>ID</abbr></figure><figure><img style="max-width:100%;height:auto;border:5px solid gray;border-radius:5px;" src="'. CF7_CONDITIONAL_URL .'images/page-slug.png" alt="How to find page or post slug" width="1024" height="202" class="size-full" srcset="'. CF7_CONDITIONAL_URL .'images/page-slug.png 1024w, '. CF7_CONDITIONAL_URL .'images/page-slug-300x59.png 300w, '. CF7_CONDITIONAL_URL .'images/page-slug-768x152.png 768w, '. CF7_CONDITIONAL_URL .'images/page-slug-1024x202.png 1024w, '. CF7_CONDITIONAL_URL .'images/page-slug-586x116.png 586w" sizes="(max-width: 1188px) 100vw, 1188px"><figcaption>This is the page (or post) slug.</figcaption></figure><p>Enter a list of the page <abbr>ID</abbr>s (numerical) or page slugs (lowercase letters, numerals, &amp; hyphens) where you want to load the stylesheet and javascript for Contact Form 7. One page <abbr>ID</abbr> or slug per line.</p>';
+		echo '<p>'. __( 'In its default settings, Contact Form 7 loads its JavaScript and CSS stylesheet on every page. This slows page loading and taxes server and client resources. In worst case scenarios, slow page loading can ding your <abbr>SEO</abbr> or drive away potential users. This setting gives you control over which pages the scripts load on.', 'cf7-conditional-load' ) . '</p><figure><img style="max-width:100%;height:auto;border:5px solid gray;border-radius:5px;" src="'. CF7_CONDITIONAL_URL .'images/page-id.png" alt="How to find page or post ID" width="1024" height="488" class="size-full" srcset="'. CF7_CONDITIONAL_URL .'images/page-id.png 1024w, '. CF7_CONDITIONAL_URL .'images/page-id-300x143.png 300w, '. CF7_CONDITIONAL_URL .'images/page-id-768x366.png 768w, '. CF7_CONDITIONAL_URL .'images/page-id-1024x488.png 1024w, '. CF7_CONDITIONAL_URL .'images/page-id-586x279.png 586w" sizes="(max-width: 1188px) 100vw, 1188px"><figcaption></figcaption>' . __( 'This is the page (or post)', 'cf7-conditional-load' ) . ' <abbr>ID</abbr></figure><figure><img style="max-width:100%;height:auto;border:5px solid gray;border-radius:5px;" src="'. CF7_CONDITIONAL_URL .'images/page-slug.png" alt="How to find page or post slug" width="1024" height="202" class="size-full" srcset="'. CF7_CONDITIONAL_URL .'images/page-slug.png 1024w, '. CF7_CONDITIONAL_URL .'images/page-slug-300x59.png 300w, '. CF7_CONDITIONAL_URL .'images/page-slug-768x152.png 768w, '. CF7_CONDITIONAL_URL .'images/page-slug-1024x202.png 1024w, '. CF7_CONDITIONAL_URL .'images/page-slug-586x116.png 586w" sizes="(max-width: 1188px) 100vw, 1188px"><figcaption>' . __( 'This is the page (or post) slug.', 'cf7-conditional-load') .'</figcaption></figure><p>' . __( 'Enter a list of the page', 'cf7-conditional-load' ) . ' <abbr>ID</abbr>s ' . __( '(numerical) or page slugs (lowercase letters, numerals, &amp; hyphens) where you want to load the stylesheet and javascript for Contact Form 7. One page', 'cf7-conditional-load' ) . ' <abbr>ID</abbr> ' . __( 'or slug per line.', 'cf7-conditional-load' ) . '</p>';
 	}
 
 	function cf7_conditional_option_pages() {
@@ -125,7 +123,7 @@
 
 	function cf7_conditional_option_render() {
 		$result = cf7_conditional_option_pages();
-		echo '<label for="cf7_conditional_load" style="display:block;margin-bottom:15px">Page <abbr>ID</abbr>s | Page Slugs</label><textarea rows="5" cols="50" placeholder="Enter one page <abbr>ID</abbr> or slug per line." name="cf7_conditional_load" id="cf7_conditional_load" value="' . $result .'">' . $result . '</textarea>';
+		echo '<label for="cf7_conditional_load" style="display:block;margin-bottom:15px"><abbr>ID</abbr>s and/or slugs</label><textarea rows="5" cols="50" placeholder="Enter one page <abbr>ID</abbr> or slug per line." name="cf7_conditional_load" id="cf7_conditional_load" value="' . $result .'">' . $result . '</textarea>';
 	}
 
 	function cf7_conditional_disable_wpcf7() {
