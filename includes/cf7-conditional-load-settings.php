@@ -35,19 +35,16 @@
 </div>
 <?php
 		} else {
-?>
-<div class="wrap">
-	<h2>Forbidden</h2>
-	<p>Only users with Administrator or Editor privileges are permitted to change these settings. Possible reasons you are seeing this message:</p>
+			echo '<div class="wrap">
+	<h2>' . __( 'Forbidden', 'cf7_conditional' ) . '</h2>
+	<p>' . __( 'Only users with Administrator or Editor privileges are permitted to change these settings. Possible reasons you are seeing this message:' , 'cf7-conditional-load' ) . '</p>
 	<ul>
-		<li>You accidentally logged in as the wrong user</li>
-		<li>Your account isn&rsquo;t and Admin or Editor account</li>
-		<li>An admistrator changed your account level</li>
-		<li>Your account wasn&rsquo;t an Admin or Editor account to begin with</li>
+		<li>' . __( 'You accidentally logged in as the wrong user' , 'cf7-conditional-load' ) . '</li>
+		<li>' . __( 'Your account isn&rsquo;t an Admin or Editor account' , 'cf7-conditional-load' ) . '</li>
+		<li>' . __( 'An admistrator changed your account level' , 'cf7-conditional-load' ) . '</li>
 	</ul>
-	<p>Please log in as an Admin or Editor or contact the site adminstrator to resolve this issue.</p>
-</div>
-<?php
+	<p>' . __( 'Please log in as an Admin or Editor or contact the site adminstrator to resolve this issue.' , 'cf7-conditional-load' ) . '</p>
+</div>';
 		}
 	}
 
@@ -74,25 +71,42 @@
 			$section_name, // The name of the setting for which this field is rendered: 'cf7_conditional_load'
 			__( 'Pages or posts to include:', 'cf7-conditional-load' ), // Settings field title
 			'cf7_conditional_option_render', // Field to render
-			$page, // page slug: 'cf7_conditional'
+			$page, // page slug: 'cf7_conditional-load'
 			$settings_section // Where to render the field: 'cf7_conditional_options_section'
 		);
 	}
 
 	function cf7_conditional_form_validate( $input ) {
 		$validated = sanitize_textarea_field( $input );
-		if (($validated !== $input) || (!preg_match("/^([a-z\d\-]([\n\r])*)*$/",$validated))) {
-			$type = 'error';
+		if ( ($validated !== $input) || ( !preg_match( '/^([a-z\d\-]([\n\r])*)*$/', $validated ) ) ) {
+			$setting = 'cf7_conditional_load';
+			$code    = esc_attr( 'settings_update_failed' );
+			$type    = 'error';
 			$message = __( 'Please enter page <abbr>ID</abbr>s (numerical) or page slugs (lowercase letters, numerals, &amp; hyphens) only. One <abbr>ID</abbr> per line. No spaces or other characters allowed.', 'cf7-conditional-load', 'cf7-conditional-load' );
 			add_settings_error(
-				'cf7_conditional_load', // option being updated
-				esc_attr( 'settings_updated' ), // CSS class
-				$message,
-				$type
+				$setting, // option being updated
+				$code, // CSS ID attribute
+				$message, // Notice content
+				$type // Notice type
 			);
+
 			return '';
+
+		} else {
+			$setting = 'cf7_conditional_load';
+			$code    = esc_attr( 'settings_updated' );
+			$type    = 'success';
+			$message = __( 'Congratulations! Your settings were successfully saved!', 'cf7-conditional-load' );
+			add_settings_error(
+				$setting, // option being updated
+				$code, // CSS ID attribute
+				$message, // Notice content
+				$type // Notice type
+			);
+
+			return $validated;
+
 		}
-		return $validated;
 
 		// DEBUGGING
 		$array = explode('\n\r', $validated); // split string at newline
@@ -104,21 +118,28 @@
 		echo '</ul>';
 	}
 
+	function cf7_conditional_form_display_notice() {
+		settings_errors( 'cf7_conditional_load' );
+	}
+
+	add_action( 'admin_notices', 'cf7_conditional_form_display_notice' );
+
 	function cf7_conditional_load_text() {
 		echo '<p>'. __( 'In its default settings, Contact Form 7 loads its JavaScript and CSS stylesheet on every page. This slows page loading and taxes server and client resources. In worst case scenarios, slow page loading can ding your <abbr>SEO</abbr> or drive away potential users. This setting gives you control over which pages the scripts load on.', 'cf7-conditional-load' ) . '</p><figure><img style="max-width:100%;height:auto;border:5px solid gray;border-radius:5px;" src="'. CF7_CONDITIONAL_URL .'images/page-id.png" alt="How to find page or post ID" width="1024" height="488" class="size-full" srcset="'. CF7_CONDITIONAL_URL .'images/page-id.png 1024w, '. CF7_CONDITIONAL_URL .'images/page-id-300x143.png 300w, '. CF7_CONDITIONAL_URL .'images/page-id-768x366.png 768w, '. CF7_CONDITIONAL_URL .'images/page-id-1024x488.png 1024w, '. CF7_CONDITIONAL_URL .'images/page-id-586x279.png 586w" sizes="(max-width: 1188px) 100vw, 1188px"><figcaption></figcaption>' . __( 'This is the page (or post)', 'cf7-conditional-load' ) . ' <abbr>ID</abbr></figure><figure><img style="max-width:100%;height:auto;border:5px solid gray;border-radius:5px;" src="'. CF7_CONDITIONAL_URL .'images/page-slug.png" alt="How to find page or post slug" width="1024" height="202" class="size-full" srcset="'. CF7_CONDITIONAL_URL .'images/page-slug.png 1024w, '. CF7_CONDITIONAL_URL .'images/page-slug-300x59.png 300w, '. CF7_CONDITIONAL_URL .'images/page-slug-768x152.png 768w, '. CF7_CONDITIONAL_URL .'images/page-slug-1024x202.png 1024w, '. CF7_CONDITIONAL_URL .'images/page-slug-586x116.png 586w" sizes="(max-width: 1188px) 100vw, 1188px"><figcaption>' . __( 'This is the page (or post) slug.', 'cf7-conditional-load') .'</figcaption></figure><p>' . __( 'Enter a list of the page', 'cf7-conditional-load' ) . ' <abbr>ID</abbr>s ' . __( '(numerical) or page slugs (lowercase letters, numerals, &amp; hyphens) where you want to load the stylesheet and javascript for Contact Form 7. One page', 'cf7-conditional-load' ) . ' <abbr>ID</abbr> ' . __( 'or slug per line.', 'cf7-conditional-load' ) . '</p>';
 	}
 
 	function cf7_conditional_option_pages() {
-		$pages = get_option(esc_textarea('cf7_conditional_load', ''));
-		return $pages; // string needed for the next function
+		// $posts = get_option( 'cf7_conditional_load', '' );
+		$posts = get_option( 'cf7_conditional_load', '' );
+		return $posts; // String needed for cf7_conditional_option_render().
 	}
 
 	function cf7_conditional_option_result() {
-		$pages = cf7_conditional_option_pages();
-		$page = array_map('trim', explode(PHP_EOL, $pages)); // create array; split string at newline
-		$result = implode( ', ', $page ); // reassemble as comma delimited list
+		$posts = cf7_conditional_option_pages();
+		$post = array_map('trim', explode(PHP_EOL, $posts)); // create array; split string at newline
+		$result = implode( ', ', $post ); // reassemble as comma delimited list
 		$result = rtrim($result); // get rid of extra whitespace
-		return $result; // string needed for the next function.
+		return $result; // String needed for cf7_conditional_disable_wpcf7().
 	}
 
 	function cf7_conditional_option_render() {
@@ -139,7 +160,7 @@
 		}
 	}
 
-	add_action( 'wp_enqueue_scripts', 'cf7_conditional_disable_wpcf7' );
+	add_action( 'wp_enqueue_scripts', 'cf7_conditional_disable_wpcf7', 100 ); // 100 instead of default 10 to defer this action so it fires after CF7
 
 	function cf7_conditional_error_notice() {
 		if ( is_plugin_active( plugin_dir_path( __FILE__ ) . "contact-form-7/wp-contact-form-7.php" ) ) {
