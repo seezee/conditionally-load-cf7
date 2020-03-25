@@ -1,7 +1,7 @@
 <?php
 /**
  * Plugin Name: Conditionally Load CF7
- * Version: 1.0.4
+ * Version: 1.0.5
  * Author URI: https://github.com/seezee
  * https://wordpress.org/plugins/cf7-conditional-load/
  * Description: In its default settings, Contact Form 7 loads its JavaScript and CSS stylesheet on every page. This slows page loading and taxes server and client resources. Use this plugin to control which pages the scripts load on.
@@ -22,13 +22,13 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 // Plugin constants.
 if ( ! defined('CF7CL_VERSION') ) {
-	define ( 'CF7CL_VERSION', '1.0.4' );
+	define ( 'CF7CL_VERSION', '1.0.5' );
 } else {
 	echo '<div id="updated" class="notice notice-error is-dismissible"><span class="dashicons dashicons-no"></span> ' . __( '<abb>CF7</abbr> Conditional Load ERROR! The <abbr>PHP</abbr> constant', 'cf7-conditional-load' ) . ' &ldquo;CF7CL_VERSION&rdquo; ' . __( 'has already been defined. This could be due to a conflict with another plugin or theme. Please check your logs to debug.', 'cf7-conditional-load' ) . '</div>';
 }
 // Load plugin files.
-if ( ! defined('_CF7CL_PATH_') ) {
-	define( '_CF7CL_PATH_', plugin_dir_path( __FILE__ ) );
+if ( ! defined('CF7CL_PATH') ) {
+	define( 'CF7CL_PATH', plugin_dir_path( __FILE__ ) );
 } else {
 	echo '<div id="updated" class="notice notice-error is-dismissible"><span class="dashicons dashicons-no"></span> ' . __( '<abb>CF7</abbr> Conditional Load ERROR! The <abbr>PHP</abbr> constant', 'cf7-conditional-load' ) . ' &ldquo;_CF7CL_CONDITIONAL_PATH_&rdquo; ' . __( 'has already been defined. This could be due to a conflict with another plugin or theme. Please check your logs to debug.', 'cf7-conditional-load' ) . '</div>';
 }
@@ -37,8 +37,8 @@ if ( ! defined('CF7CL_URL') ) {
 } else {
 	echo '<div id="updated" class="notice notice-error is-dismissible"><span class="dashicons dashicons-no"></span> ' . __( '<abb>CF7</abbr> Conditional Load ERROR! The <abbr>PHP</abbr> constant', 'cf7-conditional-load' ) . ' &ldquo;CF7CL_URL&rdquo; ' . __( 'has already been defined. This could be due to a conflict with another plugin or theme. Please check your logs to debug.', 'cf7-conditional-load' ) . '</div>';
 }
-require_once( _CF7CL_PATH_ . 'includes/cf7-conditional-load-settings.php');
-require_once( _CF7CL_PATH_ . 'includes/class-cf7-conditional-load-meta.php');
+require_once( CF7CL_PATH . 'includes/cf7-conditional-load-settings.php');
+require_once( CF7CL_PATH . 'includes/class-cf7-conditional-load-meta.php');
 
 // add menu links to the plugin entry in the plugins menu
 function cf7cl_action_links($links, $file) {
