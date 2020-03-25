@@ -1,7 +1,7 @@
 <?php
 /**
- * Plugin Name: CF7 Conditional Load
- * Version: 1.0.3
+ * Plugin Name: Conditionally Load CF7
+ * Version: 1.0.4
  * Author URI: https://github.com/seezee
  * https://wordpress.org/plugins/cf7-conditional-load/
  * Description: In its default settings, Contact Form 7 loads its JavaScript and CSS stylesheet on every page. This slows page loading and taxes server and client resources. Use this plugin to control which pages the scripts load on.
@@ -21,10 +21,10 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 // Plugin constants.
-if ( ! defined('_CF7CL_VERSION_') ) {
-	define ( '_CF7CL_VERSION_', '1.0.3' );
+if ( ! defined('CF7CL_VERSION') ) {
+	define ( 'CF7CL_VERSION', '1.0.4' );
 } else {
-	echo '<div id="updated" class="notice notice-error is-dismissible"><span class="dashicons dashicons-no"></span> ' . __( '<abb>CF7</abbr> Conditional Load ERROR! The <abbr>PHP</abbr> constant', 'cf7-conditional-load' ) . ' &ldquo;_CF7CL_VERSION_&rdquo; ' . __( 'has already been defined. This could be due to a conflict with another plugin or theme. Please check your logs to debug.', 'cf7-conditional-load' ) . '</div>';
+	echo '<div id="updated" class="notice notice-error is-dismissible"><span class="dashicons dashicons-no"></span> ' . __( '<abb>CF7</abbr> Conditional Load ERROR! The <abbr>PHP</abbr> constant', 'cf7-conditional-load' ) . ' &ldquo;CF7CL_VERSION&rdquo; ' . __( 'has already been defined. This could be due to a conflict with another plugin or theme. Please check your logs to debug.', 'cf7-conditional-load' ) . '</div>';
 }
 // Load plugin files.
 if ( ! defined('_CF7CL_PATH_') ) {
@@ -32,10 +32,10 @@ if ( ! defined('_CF7CL_PATH_') ) {
 } else {
 	echo '<div id="updated" class="notice notice-error is-dismissible"><span class="dashicons dashicons-no"></span> ' . __( '<abb>CF7</abbr> Conditional Load ERROR! The <abbr>PHP</abbr> constant', 'cf7-conditional-load' ) . ' &ldquo;_CF7CL_CONDITIONAL_PATH_&rdquo; ' . __( 'has already been defined. This could be due to a conflict with another plugin or theme. Please check your logs to debug.', 'cf7-conditional-load' ) . '</div>';
 }
-if ( ! defined('_CF7CL_URL_') ) {
-	define( '_CF7CL_URL_', plugin_dir_url( __FILE__ ) );
+if ( ! defined('CF7CL_URL') ) {
+	define( 'CF7CL_URL', plugin_dir_url( __FILE__ ) );
 } else {
-	echo '<div id="updated" class="notice notice-error is-dismissible"><span class="dashicons dashicons-no"></span> ' . __( '<abb>CF7</abbr> Conditional Load ERROR! The <abbr>PHP</abbr> constant', 'cf7-conditional-load' ) . ' &ldquo;_CF7CL_URL_&rdquo; ' . __( 'has already been defined. This could be due to a conflict with another plugin or theme. Please check your logs to debug.', 'cf7-conditional-load' ) . '</div>';
+	echo '<div id="updated" class="notice notice-error is-dismissible"><span class="dashicons dashicons-no"></span> ' . __( '<abb>CF7</abbr> Conditional Load ERROR! The <abbr>PHP</abbr> constant', 'cf7-conditional-load' ) . ' &ldquo;CF7CL_URL&rdquo; ' . __( 'has already been defined. This could be due to a conflict with another plugin or theme. Please check your logs to debug.', 'cf7-conditional-load' ) . '</div>';
 }
 require_once( _CF7CL_PATH_ . 'includes/cf7-conditional-load-settings.php');
 require_once( _CF7CL_PATH_ . 'includes/class-cf7-conditional-load-meta.php');
@@ -65,7 +65,7 @@ function cf7cl_action_links($links, $file) {
 add_filter('plugin_action_links', 'cf7cl_action_links', 10, 2);
 
 // plugin uninstallation
-register_uninstall_hook( __FILE__, 'cf7_conditional_uninstall' );
-function cf7_conditional_uninstall() {
-    delete_option( 'cf7_conditional_load' );
+register_uninstall_hook( __FILE__, 'cf7cl_conditional_uninstall' );
+function cf7cl_conditional_uninstall() {
+    delete_option( 'cf7cl_conditional_load' );
 }

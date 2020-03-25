@@ -2,7 +2,7 @@
 /**
  * Plugin Meta class file.
  *
- * @package CF7 Conditional Load/Includes
+ * @package Conditionally Load CF7/Includes
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -60,7 +60,7 @@ class CF7_Conditional_Load_Meta {
 			$iconstyle   = 'style="-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;"';
 
 			return array_merge( $links, array(
-				'<a href="' . esc_url( $supportlink ) . '"> <span class="dashicons dashicons-format-chat" ' . $iconstyle . 'title="CF7 Conditional Load ' . __( 'Support', 'cf7-conditional-load' ) . '" aria-label="CF7 Conditional Load ' . __( 'Support', 'cf7-conditional-load' ) . '"></span></a>',
+				'<a href="' . esc_url( $supportlink ) . '"> <span class="dashicons dashicons-format-chat" ' . $iconstyle . 'title="Conditionally Load CF7 ' . __( 'Support', 'cf7-conditional-load' ) . '" aria-label="Conditionally Load CF7 ' . __( 'Support', 'cf7-conditional-load' ) . '"></span></a>',
 				'<a href="' . esc_url( $twitterlink ). '"><span class="dashicons dashicons-twitter" ' . $iconstyle . 'title="' . __( 'Chris J. Zähller on Twitter', 'cf7-conditional-load' ) . '" aria-label="' . __( 'Chris J. Zähller on Twitter', 'cf7-conditional-load' ) . '"></span></a>',
 				'<a href="' . esc_url( $reviewlink ). '"><span class="dashicons dashicons-star-filled"' . $iconstyle . 'title="' . __( 'Give a 5-Star Review', 'cf7-conditional-load' ) . '" aria-label="' . __( 'Give a 5-Star Review', 'cf7-conditional-load' ) . '"></span></a>',
 				'<a href="' . esc_url( $donatelink ). '"><span class="dashicons dashicons-heart"' . $iconstyle . 'title="' . __( 'Donate', 'cf7-conditional-load' ) . '" aria-label="' . __( 'Donate', 'cf7-conditional-load' ) . '"></span></a>',
@@ -94,7 +94,7 @@ class CF7_Conditional_Load_Meta {
 	 * @since 1.0.0
 	 */
 	public function __clone() {
-		_doing_it_wrong( __FUNCTION__, esc_html__( 'Cloning of CF7_Conditional_Load_Meta is forbidden.', 'cf7-conditional-load' ), esc_attr( _CF7CL_VERSION_ ) );
+		_doing_it_wrong( __FUNCTION__, esc_html__( 'Cloning of CF7_Conditional_Load_Meta is forbidden.', 'cf7-conditional-load' ), esc_attr( CF7CL_VERSION ) );
 	} // End __clone()
 
 	/**
@@ -103,7 +103,7 @@ class CF7_Conditional_Load_Meta {
 	 * @since 1.0.0
 	 */
 	public function __wakeup() {
-		_doing_it_wrong( __FUNCTION__, esc_html__( 'Unserializing instances of CF7_Conditional_Load_Meta is forbidden.' ), esc_attr( _CF7CL_VERSION_ ) );
+		_doing_it_wrong( __FUNCTION__, esc_html__( 'Unserializing instances of CF7_Conditional_Load_Meta is forbidden.' ), esc_attr( CF7CL_VERSION ) );
 	} // End __wakeup()
 
 }
