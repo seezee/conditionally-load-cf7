@@ -29,10 +29,10 @@ In its default settings, Contact Form 7 loads its JavaScript and CSS stylesheet 
 5. Go to Settings -> Conditionally Load CF7, upload your fonts, and configure the settings.
 
 ### UPLOADING IN WORDPRESS DASHBOARD
-1. Click the download button on this and save “wp-foft-loader.zip” to your computer
+1. Click the download button on this and save “conditionally-load-cf7.zip” to your computer
 2. Navigate to “Add New” in the plugins dashboard
 3. Navigate to the “Upload” area
-4. Select “wp-foft-loader.zip” from your computer
+4. Select “conditionally-load-cf7.zip” from your computer
 5. Click “Install Now”
 6. Activate the plugin in the Plugin dashboard
 7. Go to Settings -> Conditionally Load CF7, upload your fonts, and configure the settings.
@@ -40,7 +40,7 @@ In its default settings, Contact Form 7 loads its JavaScript and CSS stylesheet 
 ### USING FTP
 1. Download the Conditionally Load CF7 ZIP file
 2. Extract the Conditionally Load CF7 ZIP file to your computer
-3. Upload the “wp-foft-loader” directory to the `/wp-content/plugins/` directory
+3. Upload the “conditionally-load-cf7” directory to the `/wp-content/plugins/` directory
 4. Activate the plugin in the Plugin dashboard
 5. Go to Settings -> Conditionally Load CF7, upload your fonts, and configure the settings.
 
