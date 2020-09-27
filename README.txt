@@ -7,7 +7,7 @@ Tags: wordpress, plugin, fonts, webfonts, performance, UX
 Requires at least: 3.9  
 Tested up to: 5.5.1  
 Requires PHP: 7.0  
-Stable tag: 1.0.9  
+Stable tag: 1.0.10  
 License: GNUv3 or later  
 License URI: https://www.gnu.org/licenses/gpl-3.0.html  
 GitHub Plugin URI: seezee/conditionally-load-cf7  
@@ -67,6 +67,12 @@ Would you like to help translate WP FOFT Loader into your own language? [You can
 
 == Changelog ==
 
+= 1.0.10 =
+* 2020-09-27
+* Bugfix: fix mismatched text-domain
+* Fix some typos in microcopy
+* Refactor i18n
+
 = 1.0.9 =
 * 2020-09-04
 * Tested up to WordPress 5.5.1
@@ -109,6 +115,8 @@ Would you like to help translate WP FOFT Loader into your own language? [You can
 
 == Upgrade Notice ==
 
-= 1.0.9 =
-* 2020-09-04
-* Tested up to WordPress 5.5.1
+= 1.0.10 =
+* 2020-09-27
+* Bugfix: fix mismatched text-domain
+* Fix some typos in microcopy
+* Refactor i18n
