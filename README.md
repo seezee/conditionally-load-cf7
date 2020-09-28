@@ -7,7 +7,7 @@ Tags: wordpress, plugin, fonts, webfonts, performance, UX
 Requires at least: 3.9  
 Tested up to: 5.5.1  
 Requires PHP: 7.0  
-Stable tag: 1.0.10  
+Stable tag: 1.0.11  
 License: GNUv3 or later  
 License URI: https://www.gnu.org/licenses/gpl-3.0.html  
 GitHub Plugin URI: seezee/conditionally-load-cf7  
@@ -45,7 +45,7 @@ In its default settings, Contact Form 7 loads its JavaScript and CSS stylesheet 
 5. Go to Settings -> Conditionally Load CF7, upload your fonts, and configure the settings.
 
 ### DOWNLOAD FROM GITHUB
-1. Download the plugin via [https://github.com/seezee/cf7-conditional-load](https://github.com/seezee/cf7-conditional-load)
+1. Download the plugin via [https://github.com/seezee/conditionally-load-cf7](https://github.com/seezee/conditionally-load-cf7)
 2. Follow the directions for using FTP
 
 == Frequently Asked Questions ==
@@ -69,6 +69,10 @@ Feel free to send a donation to my [Paypal account](https://paypal.me/messengerw
 Would you like to help translate WP FOFT Loader into your own language? [You can do that here!](https://translate.wordpress.org/projects/wp-plugins/cf7-conditional-load)
 
 == Changelog ==
+
+= 1.0.11 =
+* 2020-09-28
+* SECURITY FIX: better escaping and sanitization of translatable strings
 
 = 1.0.10 =
 * 2020-09-27
@@ -118,9 +122,6 @@ Would you like to help translate WP FOFT Loader into your own language? [You can
 
 == Upgrade Notice ==
 
-= 1.0.10 =
-* 2020-09-27
-* Bugfix: fix mismatched text-domain
-* Fix some typos in microcopy
-* Refactor i18n
-
+= 1.0.11 =
+* 2020-09-28
+* SECURITY FIX: better escaping and sanitization of translatable strings
