@@ -4,10 +4,10 @@ Donate link: https://messengerwebdesign.com/donate
 Author URI: https://github.com/seezee  
 Plugin URI: https://wordpress.org/plugins/conditionally-load-cf7  
 Tags: wordpress, plugin, fonts, webfonts, performance, UX  
-Requires at least: 3.9  
+Requires at least: 4.7.0  
 Tested up to: 5.5.1  
 Requires PHP: 7.0  
-Stable tag: 1.0.11  
+Stable tag: 1.0.12  
 License: GNUv3 or later  
 License URI: https://www.gnu.org/licenses/gpl-3.0.html  
 GitHub Plugin URI: seezee/conditionally-load-cf7  
@@ -70,6 +70,11 @@ Would you like to help translate WP FOFT Loader into your own language? [You can
 
 == Changelog ==
 
+= 1.0.12 =
+* 2020-10-08
+* Tested up to 5.5.3
+* Use Dashicons coffee glyph instead of FontAwesome coffee glyph in plugin meta
+
 = 1.0.11 =
 * 2020-09-28
 * SECURITY FIX: better escaping and sanitization of translatable strings
@@ -122,6 +127,7 @@ Would you like to help translate WP FOFT Loader into your own language? [You can
 
 == Upgrade Notice ==
 
-= 1.0.11 =
-* 2020-09-28
-* SECURITY FIX: better escaping and sanitization of translatable strings
+= 1.0.12 =
+* 2020-10-08
+* Tested up to 5.5.3
+* Use Dashicons coffee glyph instead of FontAwesome coffee glyph in plugin meta

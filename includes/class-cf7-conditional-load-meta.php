@@ -64,7 +64,7 @@ class CF7_Conditional_Load_Meta {
 				'<a href="' . esc_url( $twitterlink ). '"><span class="dashicons dashicons-twitter" ' . $iconstyle . 'title="' . esc_attr__( 'Chris J. Zähller on Twitter', 'cf7-conditional' ) . '" aria-label="' . esc_attr__( 'Chris J. Zähller on Twitter', 'cf7-conditional' ) . '"></span></a>',
 				'<a href="' . esc_url( $reviewlink ). '"><span class="dashicons dashicons-star-filled"' . $iconstyle . 'title="' . esc_attr__( 'Give a 5-Star Review', 'cf7-conditional' ) . '" aria-label="' . esc_attr__( 'Give a 5-Star Review', 'cf7-conditional' ) . '"></span></a>',
 				'<a href="' . esc_url( $donatelink ). '"><span class="dashicons dashicons-heart"' . $iconstyle . 'title="' . esc_attr__( 'Donate', 'cf7-conditional' ) . '" aria-label="' . esc_attr__( 'Donate', 'cf7-conditional' ) . '"></span></a>',
-				'<a href="' . esc_url( $coffeelink ). '"><span class="wpfl-fas fa-coffee"' . $iconstyle . 'title="' . esc_attr__('Buy the Developer a Coffee', 'cf7-conditional' ) . '" aria-label="' . esc_attr__('Buy the Developer a Coffee', 'cf7-conditional' ) . '"></span></a>', ) );
+				'<a href="' . esc_url( $coffeelink ). '"><span class="dashicons dashicons-coffee"' . $iconstyle . 'title="' . esc_attr__('Buy the Developer a Coffee', 'cf7-conditional' ) . '" aria-label="' . esc_attr__('Buy the Developer a Coffee', 'cf7-conditional' ) . '"></span></a>', ) );
 		}
 
 		return $links;

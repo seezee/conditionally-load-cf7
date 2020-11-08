@@ -1,7 +1,7 @@
 <?php
 /**
  * Plugin Name: Conditionally Load CF7
- * Version: 1.0.11
+ * Version: 
  * Author URI: https://github.com/seezee
  * https://wordpress.org/plugins/cf7-conditional-load/
  * Description: In its default settings, Contact Form 7 loads its JavaScript and CSS stylesheet on every page. This slows page loading and taxes server and client resources. Use this plugin to control which pages the scripts load on.
@@ -29,7 +29,7 @@ $error_open = '<div id="updated" class="notice notice-error is-dismissible"><spa
 $error_close = '</div>';
 
 if ( ! defined('CF7CL_VERSION') ) {
-	define ( 'CF7CL_VERSION', '1.0.11' );
+	define ( 'CF7CL_VERSION', '' );
 } else {
 	$message = __( '<abb>CF7</abbr> Conditional Load ERROR! The <abbr>PHP</abbr> constant “CF7CL_VERSION” has already been defined. This could be due to a conflict with another plugin or theme. Please check your logs to debug.', 'cf7-conditional' );
 	echo $error_open . wp_kses( $message, $arr ) . $error_close;
@@ -47,8 +47,9 @@ if ( ! defined('CF7CL_URL') ) {
 	$message = __( '<abb>CF7</abbr> Conditional Load ERROR! The <abbr>PHP</abbr> constant “CF7CL_URL” has already been defined. This could be due to a conflict with another plugin or theme. Please check your logs to debug.', 'cf7-conditional' );
 	echo $error_open . wp_kses( $message, $arr ) . $error_close;
 }
-require_once( CF7CL_PATH . 'includes/cf7-conditional-load-settings.php');
+require_once( CF7CL_PATH . 'includes/class-cf7-conditional-load.php');
 require_once( CF7CL_PATH . 'includes/class-cf7-conditional-load-meta.php');
+require_once( CF7CL_PATH . 'includes/cf7-conditional-load-settings.php');
 
 // add menu links to the plugin entry in the plugins menu
 function cf7cl_action_links($links, $file) {
