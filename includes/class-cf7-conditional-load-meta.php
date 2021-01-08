@@ -35,7 +35,7 @@ class CF7_Conditional_Load_Meta {
 	/**
 	 * Constructor function.
 	 */
-	public function __links() {
+	public function links() {
 
 		// Filter the plugin meta.
 		add_filter( 'plugin_row_meta', array( $this, 'meta_links' ), 10, 2 );
@@ -59,12 +59,16 @@ class CF7_Conditional_Load_Meta {
 			$coffeelink  = 'https://www.buymeacoffee.com/chrisjzahller';
 			$iconstyle   = 'style="-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;"';
 
-			return array_merge( $links, array(
-				'<a href="' . esc_url( $supportlink ) . '"> <span class="dashicons dashicons-format-chat" ' . $iconstyle . 'title="' . esc_attr_x( 'Conditionally Load CF7 Support', 'noun', 'cf7-conditional' ) . '" aria-label="' . esc_attr_x( 'Conditionally Load CF7 Support', 'noun', 'cf7-conditional' ) . '"></span></a>',
-				'<a href="' . esc_url( $twitterlink ). '"><span class="dashicons dashicons-twitter" ' . $iconstyle . 'title="' . esc_attr__( 'Chris J. Zähller on Twitter', 'cf7-conditional' ) . '" aria-label="' . esc_attr__( 'Chris J. Zähller on Twitter', 'cf7-conditional' ) . '"></span></a>',
-				'<a href="' . esc_url( $reviewlink ). '"><span class="dashicons dashicons-star-filled"' . $iconstyle . 'title="' . esc_attr__( 'Give a 5-Star Review', 'cf7-conditional' ) . '" aria-label="' . esc_attr__( 'Give a 5-Star Review', 'cf7-conditional' ) . '"></span></a>',
-				'<a href="' . esc_url( $donatelink ). '"><span class="dashicons dashicons-heart"' . $iconstyle . 'title="' . esc_attr__( 'Donate', 'cf7-conditional' ) . '" aria-label="' . esc_attr__( 'Donate', 'cf7-conditional' ) . '"></span></a>',
-				'<a href="' . esc_url( $coffeelink ). '"><span class="dashicons dashicons-coffee"' . $iconstyle . 'title="' . esc_attr__('Buy the Developer a Coffee', 'cf7-conditional' ) . '" aria-label="' . esc_attr__('Buy the Developer a Coffee', 'cf7-conditional' ) . '"></span></a>', ) );
+			return array_merge(
+				$links,
+				array(
+					'<a href="' . esc_url( $supportlink ) . '"> <span class="dashicons dashicons-format-chat" ' . $iconstyle . 'title="' . esc_attr_x( 'Conditionally Load CF7 Support', 'noun', 'cf7-conditional' ) . '" aria-label="' . esc_attr_x( 'Conditionally Load CF7 Support', 'noun', 'cf7-conditional' ) . '"></span></a>',
+					'<a href="' . esc_url( $twitterlink ) . '"><span class="dashicons dashicons-twitter" ' . $iconstyle . 'title="' . esc_attr__( 'Chris J. Zähller on Twitter', 'cf7-conditional' ) . '" aria-label="' . esc_attr__( 'Chris J. Zähller on Twitter', 'cf7-conditional' ) . '"></span></a>',
+					'<a href="' . esc_url( $reviewlink ) . '"><span class="dashicons dashicons-star-filled"' . $iconstyle . 'title="' . esc_attr__( 'Give a 5-Star Review', 'cf7-conditional' ) . '" aria-label="' . esc_attr__( 'Give a 5-Star Review', 'cf7-conditional' ) . '"></span></a>',
+					'<a href="' . esc_url( $donatelink ) . '"><span class="dashicons dashicons-heart"' . $iconstyle . 'title="' . esc_attr__( 'Donate', 'cf7-conditional' ) . '" aria-label="' . esc_attr__( 'Donate', 'cf7-conditional' ) . '"></span></a>',
+					'<a href="' . esc_url( $coffeelink ) . '"><span class="dashicons dashicons-coffee"' . $iconstyle . 'title="' . esc_attr__( 'Buy the Developer a Coffee', 'cf7-conditional' ) . '" aria-label="' . esc_attr__( 'Buy the Developer a Coffee', 'cf7-conditional' ) . '"></span></a>',
+				)
+			);
 		}
 
 		return $links;
@@ -109,4 +113,4 @@ class CF7_Conditional_Load_Meta {
 }
 
 $meta = new CF7_Conditional_Load_Meta();
-$meta -> __links();
+$meta->links();
