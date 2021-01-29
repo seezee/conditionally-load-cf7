@@ -16,6 +16,11 @@ GitHub Plugin URI: seezee/conditionally-load-cf7
 
 In its default settings, Contact Form 7 loads its JavaScript and CSS stylesheet on every page. This slows page loading and taxes server and client resources. Use this plugin to control which pages the scripts load on.
 
+NEW in v1.0.15: The plugin also prevents scripts and styles from the following plugins from loading. If you are using any other plugin that extends Contact Form 7 and loads its scripts on all pages, please open a support ticket and we will look into adding it.
+
+* Contact Form 7 Multi Drag & Drop Multi-File Upload
+* Contact Form 7 Multi-Step
+
 == Installation ==
 
 ### USING THE WORDPRESS DASHBOARD
