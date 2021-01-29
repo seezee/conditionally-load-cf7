@@ -7,7 +7,7 @@ Tags: wordpress, plugin, fonts, webfonts, performance, UX
 Requires at least: 4.7.0  
 Tested up to: 5.6  
 Requires PHP: 7.0  
-Stable tag: 1.0.14  
+Stable tag: 1.0.15  
 License: GNUv3 or later  
 License URI: https://www.gnu.org/licenses/gpl-3.0.html  
 GitHub Plugin URI: seezee/conditionally-load-cf7  
@@ -66,75 +66,99 @@ Feel free to send a donation to my [Paypal account](https://paypal.me/messengerw
 Would you like to help translate WP FOFT Loader into your own language? [You can do that here!](https://translate.wordpress.org/projects/wp-plugins/cf7-conditional-load)
 
 == Changelog ==
+= 1.0.15 =
+
+* 2021-01-08
+* BUGFIX: Remove space after commas in $result string; otherwise plugin chokes after first item in string
+* Check if scripts are enqueued & registered before unloading them
+* Add check for CF7 Multi Drag & Drop Multi-File Upload plugin
+* Add check for CF7 Multi-Step plugin
 
 = 1.0.14 =
+
 * 2021-01-08
 * Update 'Tested up to WordPress 5.6' in README
 * Fix missing version number
 
 = 1.0.13 =
+
 * 2021-01-07
 * Tested up to 5.6
 * Reformat code to meet WordPress coding standards
 
 = 1.0.12 =
+
 * 2020-10-08
 * Tested up to 5.5.3
 * Use Dashicons coffee glyph instead of FontAwesome coffee glyph in plugin meta
 
 = 1.0.11 =
+
 * 2020-09-28
 * SECURITY FIX: better escaping and sanitization of translatable strings
 
 = 1.0.10 =
+
 * 2020-09-27
 * Bugfix: fix mismatched text-domain
 * Fix some typos in microcopy
 * Refactor i18n
 
 = 1.0.9 =
+
 * 2020-09-04
 * Tested up to WordPress 5.5.1
 
 = 1.0.8 =
+
 * 2020-06-16
 * Tested up to WordPress 5.4.2
 
 = 1.0.7 =
+
 * 2020-04-01
 * Tested up to WordPress 5.4.1
 
 = 1.0.6 =
+
 * 2020-04-01
 * Tested up to WordPress 5.4
 
 = 1.0.5 =
+
 * 2020-03-25
 * Remove surrounding underscores from contant 'CF7CL_PATH' to meet WordPress coding standards
 * Add POT file
 
 = 1.0.4 =
+
 * 2020-03-25
 * Change plugin display name to meet WordPress trademark requirements
 * Change constant names to meet WordPress coding standards
 * Modify select namespaces
 
 = 1.0.3 =
+
 * 2020-03-20
 * Update README
 * Add action links and plugin meta to plugins page
 
 = 1.0.2 =
+
 * 2020-03-18
 * BUGFIX: lower wp_enqueue_scripts priority so it fires after CF7
 
 = 1.0.2 =
+
 * 2020-03-13
 * Initial release
 
 == Upgrade Notice ==
 
-= 1.0.14 =
+= 1.0.15 =
+
 * 2021-01-08
-* Update 'Tested up to WordPress 5.6' in README
-* Fix missing version number
+* BUGFIX: Remove space after commas in $result string; otherwise plugin chokes after first item in string
+* Check if scripts are enqueued & registered before unloading them
+* Add check for CF7 Multi Drag & Drop Multi-File Upload plugin
+* Add check for CF7 Multi-Step plugin

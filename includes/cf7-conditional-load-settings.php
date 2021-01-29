@@ -43,7 +43,9 @@ function cf7cl_options_page() {
   <form action="options.php" method="post">
 		<?php settings_fields( 'cf7cl_conditional' ); // Render necessary invisible fields. ?>
 		<?php do_settings_sections( 'cf7cl_conditional' ); ?>
-	<input name="Submit" type="submit" value="<?php esc_attr_e( 'Save Changes', 'cf7-conditional' ); ?>" class="button button-primary" />
+	<input name="Submit" type="submit"
+	  value="<?php esc_attr_e( 'Save Changes', 'cf7-conditional' ); ?>"
+	  class="button button-primary" />
   </form>
 </div>
 		<?php
@@ -167,7 +169,7 @@ function cf7cl_option_pages() {
 function cf7cl_option_result() {
 	$posts  = cf7cl_option_pages();
 	$post   = array_map( 'trim', explode( PHP_EOL, $posts ) ); // create array; split string at newline.
-	$result = implode( ', ', $post ); // reassemble as comma delimited list.
+	$result = implode( ',', $post ); // reassemble as comma delimited list.
 	$result = rtrim( $result ); // get rid of extra whitespace.
 	return $result; // String needed for cf7cl_disable_wpcf7().
 }
@@ -178,27 +180,112 @@ function cf7cl_option_result() {
 function cf7cl_option_render() {
 	$arr = array( 'abbr' => array() );
 
-	$result = cf7cl_option_pages();
-	echo '<label for="cf7cl_conditional_load" style="display:block;margin-bottom:15px">' . wp_kses( __( '<abbr>ID</abbr>s and/or slugs', 'cf7-conditional' ), $arr ) . '</label><textarea rows="5" cols="50" placeholder="' . wp_kses( __( 'Enter one page <abbr>ID</abbr> or slug per line.', 'cf7-conditional' ), $arr ) . '" name="cf7cl_conditional_load" id="cf7cl_conditional_load" value="' . $result . '">' . $result . '</textarea>'; // phpcs:ignore
+	$posts = cf7cl_option_pages();
+	echo '<label for="cf7cl_conditional_load" style="display:block;margin-bottom:15px">' . wp_kses( __( '<abbr>ID</abbr>s and/or slugs', 'cf7-conditional' ), $arr ) . '</label><textarea rows="5" cols="50" placeholder="' . wp_kses( __( 'Enter one page <abbr>ID</abbr> or slug per line.', 'cf7-conditional' ), $arr ) . '" name="cf7cl_conditional_load" id="cf7cl_conditional_load" value="' . $posts . '">' . $posts . '</textarea>'; // phpcs:ignore
 }
 
 /**
- * Load the script only on the whitelisted pages.
+ * Load the Contact Form 7 script only on the whitelisted pages.
  */
 function cf7cl_disable_wpcf7() {
 	$result = cf7cl_option_result();
 	if ( ! empty( $result ) ) {
-		$result = explode( ',', $result );  // return to array.
+		// Return to array.
+		$result = explode( ',', $result );
 	}
-	if ( ! is_page( $result ) ) { // = array().
-		wp_dequeue_style( 'contact-form-7' );
-		wp_deregister_style( 'contact-form-7' );
-		wp_dequeue_script( 'contact-form-7' );
-		wp_deregister_script( 'contact-form-7' );
+	// Are the scripts enqueued & registered?
+	if ( ( wp_script_is( 'contact-form-7', 'enqueued' ) ) && ( wp_script_is( 'contact-form-7', 'registered' ) ) ) {
+		// Is the page name, ID, or slug in the array? If not, deregister!
+		if ( ! is_page( $result ) ) {
+			wp_dequeue_style( 'contact-form-7' );
+			wp_deregister_style( 'contact-form-7' );
+			wp_dequeue_script( 'contact-form-7' );
+			wp_deregister_script( 'contact-form-7' );
+		}
+	}
+
+	// CF7 Multi-Step.
+	if ( ( wp_script_is( 'cf7msm', 'enqueued' ) ) && ( wp_script_is( 'cf7msm', 'registered' ) ) ) {
+		if ( ! is_page( $result ) ) {
+			wp_dequeue_style( 'cf7msm' );
+			wp_deregister_style( 'cf7msm' );
+			wp_dequeue_script( 'cf7msm' );
+			wp_deregister_script( 'cf7msm' );
+		}
+	}
+
+	// CF7 Redirect.
+	if ( ( wp_script_is( 'cf7pp-redirect_method', 'enqueued' ) ) && ( wp_script_is( 'cf7pp-redirect_method', 'registered' ) ) ) {
+		if ( ! is_page( $result ) ) {
+			wp_dequeue_style( 'cf7pp-redirect_method' );
+			wp_deregister_style( 'cf7pp-redirect_method' );
+			wp_dequeue_script( 'cf7pp-redirect_method' );
+			wp_deregister_script( 'cf7pp-redirect_method' );
+		}
+	}
+
+	// CF7 Redirect.
+	if ( ( wp_script_is( 'wpcf7-redirect-script', 'enqueued' ) ) && ( wp_script_is( 'wpcf7-redirect-script', 'registered' ) ) ) {
+		if ( ! is_page( $result ) ) {
+			wp_dequeue_style( 'wpcf7-redirect-script' );
+			wp_deregister_style( 'wpcf7-redirect-script' );
+			wp_dequeue_script( 'wpcf7-redirect-script' );
+			wp_deregister_script( 'wpcf7-redirect-script' );
+		}
+	}
+
+	// CF7 Drag & Drop Multi-File Upload.
+	if ( ( wp_script_is( 'codedropz-uploader', 'enqueued' ) ) && ( wp_script_is( 'codedropz-uploader', 'registered' ) ) ) {
+		if ( ! is_page( $result ) ) {
+			wp_dequeue_style( 'codedropz-uploader' );
+			wp_deregister_style( 'codedropz-uploader' );
+			wp_dequeue_script( 'codedropz-uploader' );
+			wp_deregister_script( 'codedropz-uploader' );
+		}
+	}
+
+	// CF7 Drag & Drop Multi-File Upload.
+	if ( ( wp_script_is( 'dnd-upload-cf7', 'enqueued' ) ) && ( wp_script_is( 'dnd-upload-cf7', 'registered' ) ) ) {
+		if ( ! is_page( $result ) ) {
+			wp_dequeue_style( 'dnd-upload-cf7' );
+			wp_deregister_style( 'dnd-upload-cf7' );
+			wp_dequeue_script( 'dnd-upload-cf7' );
+			wp_deregister_script( 'dnd-upload-cf7' );
+		}
+	}
+
+	// CF7 Conditional Fields
+	if ( ( wp_script_is( 'wpcf7cf-scripts', 'enqueued' ) ) && ( wp_script_is( 'wpcf7cf-scripts', 'registered' ) ) ) {
+		if ( ! is_page( $result ) ) {
+			wp_dequeue_style( 'wpcf7cf-scripts' );
+			wp_deregister_style( 'wpcf7cf-scripts' );
+			wp_dequeue_script( 'wpcf7cf-scripts' );
+			wp_deregister_script( 'wpcf7cf-scripts' );
+		}
+	}
+
+	// CF7 jQuery Validate.
+	if ( ( wp_script_is( 'jvcf7_jquery_validate', 'enqueued' ) ) && ( wp_script_is( 'jvcf7_jquery_validate', 'registered' ) ) ) {
+		if ( ! is_page( $result ) ) {
+			wp_dequeue_style( 'jvcf7_jquery_validate' );
+			wp_deregister_style( 'jvcf7_jquery_validate' );
+			wp_dequeue_script( 'jvcf7_jquery_validate' );
+			wp_deregister_script( 'jvcf7_jquery_validate' );
+		}
+	}
+
+	// CF7 jQuery Validate.
+	if ( ( wp_script_is( 'jvcf7_validation', 'enqueued' ) ) && ( wp_script_is( 'jvcf7_validation', 'registered' ) ) ) {
+		if ( ! is_page( $result ) ) {
+			wp_dequeue_style( 'jvcf7_validation' );
+			wp_deregister_style( 'jvcf7_validation' );
+			wp_dequeue_script( 'jvcf7_validation' );
+			wp_deregister_script( 'jvcf7_validation' );
+		}
 	}
 }
 
-	add_action( 'wp_enqueue_scripts', 'cf7cl_disable_wpcf7', 100 ); // 100 instead of default 10 to defer this action so it fires after CF7.
+add_action( 'wp_enqueue_scripts', 'cf7cl_disable_wpcf7', 1000 ); // 1000 instead of default 10 to defer this action so it fires after CF7.
 
 /**
  * Activation notice.
@@ -221,4 +308,4 @@ function cf7cl_error_notice() {
 	}
 }
 
-	add_action( 'admin_notices', 'cf7cl_error_notice' );
+add_action( 'admin_notices', 'cf7cl_error_notice' );
