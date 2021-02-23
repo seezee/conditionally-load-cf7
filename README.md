@@ -7,7 +7,7 @@ Tags: wordpress, plugin, fonts, webfonts, performance, UX
 Requires at least: 4.7.0  
 Tested up to: 5.6  
 Requires PHP: 7.0  
-Stable tag: 1.0.15  
+Stable tag: 1.0.16  
 License: GNUv3 or later  
 License URI: https://www.gnu.org/licenses/gpl-3.0.html  
 GitHub Plugin URI: seezee/conditionally-load-cf7  
@@ -21,8 +21,10 @@ In its default settings, Contact Form 7 loads its JavaScript and CSS stylesheet 
 
 NEW in v1.0.15: The plugin also prevents scripts and styles from the following plugins from loading. If you are using any other plugin that extends Contact Form 7 and loads its scripts on all pages, please open a support ticket and we will look into adding it.
 
-* Contact Form 7 Multi Drag & Drop Multi-File Upload
-* Contact Form 7 Multi-Step
+* Contact Form 7 Conditional Fields
+* Contact Form 7 Multi-Step Forms
+* Contact Form CFDB7
+* Drag and Drop Multiple File Upload — Contact Form 7
 
 == Installation ==
 
@@ -74,6 +76,15 @@ Feel free to send a donation to my [Paypal account](https://paypal.me/messengerw
 Would you like to help translate WP FOFT Loader into your own language? [You can do that here!](https://translate.wordpress.org/projects/wp-plugins/cf7-conditional-load)
 
 == Changelog ==
+
+= 1.0.16 =
+
+* 2021-02-23
+* BUGFIX: Fixed admin styles not loading
+* Add check for Contact Form CFDB7
+* Add check for Drag and Drop Multiple File Upload — Contact Form 7
+* Separate logic for scripts and styles
+
 = 1.0.15 =
 
 * 2021-01-08
@@ -163,10 +174,10 @@ Would you like to help translate WP FOFT Loader into your own language? [You can
 
 == Upgrade Notice ==
 
-= 1.0.15 =
+= 1.0.16 =
 
-* 2021-01-08
-* BUGFIX: Remove space after commas in $result string; otherwise plugin chokes after first item in string
-* Check if scripts are enqueued & registered before unloading them
-* Add check for CF7 Multi Drag & Drop Multi-File Upload plugin
-* Add check for CF7 Multi-Step plugin
+* 2021-02-23
+* BUGFIX: Fixed admin styles not loading
+* Add check for Contact Form CFDB7
+* Add check for Drag and Drop Multiple File Upload — Contact Form 7
+* Separate logic for scripts and styles

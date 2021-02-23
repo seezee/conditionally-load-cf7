@@ -1,7 +1,7 @@
 <?php
 /**
  * Plugin Name: Conditionally Load CF7
- * Version: 1.1.15
+ * Version: 1.0.16
  * Author URI: https://github.com/seezee
  * https://wordpress.org/plugins/cf7-conditional-load/
  * Description: In its default settings, Contact Form 7 loads its JavaScript and CSS stylesheet on every page. This slows page loading and taxes server and client resources. Use this plugin to control which pages the scripts load on.
@@ -48,9 +48,37 @@ if ( ! defined( 'CF7CL_URL' ) ) {
 	$message = __( '<abb>CF7</abbr> Conditional Load ERROR! The <abbr>PHP</abbr> constant “CF7CL_URL” has already been defined. This could be due to a conflict with another plugin or theme. Please check your logs to debug.', 'cf7-conditional' );
 	echo $error_open . wp_kses( $message, $arr ) . $error_close; // phpcs:ignore
 }
+
 require_once CF7CL_PATH . 'includes/class-cf7-conditional-load.php';
 require_once CF7CL_PATH . 'includes/class-cf7-conditional-load-meta.php';
 require_once CF7CL_PATH . 'includes/cf7-conditional-load-settings.php';
+
+/**
+ * Admin enqueue style.
+ *
+ * @param string $hook Hook parameter.
+ *
+ * @return void
+ */
+function admin_enqueue_styles( $hook ) {
+	$token = 'cf7-conditional-load';
+
+	// Load plugin environment variables.
+	$assets_url = esc_url( plugins_url( 'assets/', __FILE__ ) );
+
+	// Use minified script.
+	$script_suffix = defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ? '' : '.min';
+	global $pagenow;
+
+	if ( ( 'plugins.php' !== $pagenow && 'settings_page_cf7-conditional-load' !== $hook ) || ! current_user_can( 'install_plugins' ) ) {
+		return;
+	}
+
+	wp_register_style( $token . '-admin-style', esc_url( $assets_url ) . 'css/admin' . $script_suffix . '.css', array(), esc_html( CF7CL_VERSION ) );
+	wp_enqueue_style( $token . '-admin-style' );
+} // End admin_enqueue_styles ()
+
+add_action( 'admin_enqueue_scripts', 'admin_enqueue_styles' );
 
 /**
  * Add menu links to the plugin entry in the plugins menu.
@@ -69,7 +97,7 @@ function cf7cl_action_links( $links, $file ) {
 	if ( $file === $this_plugin ) {
 
 		// link to what ever you want.
-		$plugin_links[] = '<a href="' . esc_url( 'options-general.php?page=cf7-conditional-load' ) . '">' . __( 'Settings', 'wp-foft-loader' ) . '</a>';
+		$plugin_links[] = '<a href="' . esc_url( 'options-general.php?page=cf7-conditional-load' ) . '">' . __( 'Settings', 'cf7-conditional' ) . '</a>';
 
 		// add the links to the list of links already there.
 		foreach ( $plugin_links as $link ) {

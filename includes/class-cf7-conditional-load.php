@@ -24,60 +24,6 @@ class CF7_Conditional_Load {
 	private static $instance = null;
 
 	/**
-	 * The token.
-	 *
-	 * @var     string
-	 * @access  public
-	 * @since   1.0.0
-	 */
-	public $token;
-
-	/**
-	 * The main plugin file.
-	 *
-	 * @var     string
-	 * @access  public
-	 * @since   1.0.0
-	 */
-	public $file;
-
-	/**
-	 * The main plugin directory.
-	 *
-	 * @var     string
-	 * @access  public
-	 * @since   1.0.0
-	 */
-	public $dir;
-
-	/**
-	 * The plugin assets directory.
-	 *
-	 * @var     string
-	 * @access  public
-	 * @since   1.0.0
-	 */
-	public $assets_dir;
-
-	/**
-	 * The plugin assets URL.
-	 *
-	 * @var     string
-	 * @access  public
-	 * @since   1.0.0
-	 */
-	public $assets_url;
-
-	/**
-	 * Suffix for Javascripts.
-	 *
-	 * @var     string
-	 * @access  public
-	 * @since   1.0.0
-	 */
-	public $script_suffix;
-
-	/**
 	 * Settings class object
 	 *
 	 * @var     object
@@ -92,38 +38,15 @@ class CF7_Conditional_Load {
 	 * @param string $file File constructor.
 	 */
 	public function __construct( $file = '' ) {
-		$this->token = 'cf7-conditional-load';
 
 		// Load plugin environment variables.
-		$this->file       = $file;
-		$this->dir        = dirname( $this->file );
-		$this->assets_dir = trailingslashit( $this->dir ) . 'assets';
-		$this->assets_url = esc_url( trailingslashit( plugins_url( '/assets/', $this->file ) ) );
-
-		$this->script_suffix = defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ? '' : '.min'; // Use minified script.
-
-		// Load admin CSS.
-		add_action( 'admin_enqueue_scripts', array( $this, 'admin_enqueue_styles' ), 10, 1 );
+		$this->file = $file;
 
 		// Handle localisation.
 		$this->load_plugin_textdomain();
 		add_action( 'init', array( $this, 'load_localisation' ), 0 );
 
 	} // End __construct ()
-
-	/**
-	 * Admin enqueue style.
-	 *
-	 * @param string $hook Hook parameter.
-	 *
-	 * @return void
-	 */
-	public function admin_enqueue_styles( $hook ) {
-		global $pagenow;
-
-		wp_register_style( $this->token . '-admin', esc_url( $this->assets_url ) . 'css/admin' . $this->script_suffix . '.css', array(), esc_html( CF7CL_VERSION ) );
-		wp_enqueue_style( $this->token . '-admin' );
-	} /// End admin_enqueue_styles ()
 
 	/**
 	 * Load plugin localisation
