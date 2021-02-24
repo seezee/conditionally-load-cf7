@@ -118,12 +118,3 @@ register_uninstall_hook( __FILE__, 'cf7cl_conditional_uninstall' );
 function cf7cl_conditional_uninstall() {
 	delete_option( 'cf7cl_conditional_load' );
 }
-
-function wpa54064_inspect_scripts() {
-	global $wp_scripts;
-	foreach( $wp_scripts->queue as $handle ) :
-			echo $handle;
-			echo ', ';
-	endforeach;
-}
-add_action( 'wp_print_scripts', 'wpa54064_inspect_scripts' );
