@@ -2,14 +2,14 @@
 # This file is distributed under the same license as the Conditionally Load CF7 plugin.
 msgid ""
 msgstr ""
-"Project-Id-Version: Conditionally Load CF7 1.0.16\n"
+"Project-Id-Version: Conditionally Load CF7 1.0.17\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/cf7-conditional-load\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2021-02-23T19:18:55+00:00\n"
+"POT-Creation-Date: 2021-02-24T17:54:28+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.4.0\n"
 "X-Domain: cf7-conditional\n"
@@ -44,7 +44,7 @@ msgstr ""
 msgid "<abb>CF7</abbr> Conditional Load ERROR! The <abbr>PHP</abbr> constant “CF7CL_URL” has already been defined. This could be due to a conflict with another plugin or theme. Please check your logs to debug."
 msgstr ""
 
-#: cf7-conditional-load.php:81
+#: cf7-conditional-load.php:100
 msgid "Settings"
 msgstr ""
 
@@ -104,11 +104,11 @@ msgstr ""
 msgid "Enter one page <abbr>ID</abbr> or slug per line."
 msgstr ""
 
-#: includes/cf7-conditional-load-settings.php:311
+#: includes/cf7-conditional-load-settings.php:319
 msgid "You have installed and activated the Contact Form 7 plugin."
 msgstr ""
 
-#: includes/cf7-conditional-load-settings.php:314
+#: includes/cf7-conditional-load-settings.php:322
 msgid "Please configure Conditionally Load CF7 Settings"
 msgstr ""
 
@@ -141,10 +141,10 @@ msgstr ""
 msgid "Unserializing instances of CF7_Conditional_Load_Meta is forbidden."
 msgstr ""
 
-#: includes/class-cf7-conditional-load.php:179
+#: includes/class-cf7-conditional-load.php:102
 msgid "Cloning of Class_CF7_Conditional_Load is forbidden."
 msgstr ""
 
-#: includes/class-cf7-conditional-load.php:188
+#: includes/class-cf7-conditional-load.php:111
 msgid "Unserializing instances of Class_CF7_Conditional_Load is forbidden."
 msgstr ""

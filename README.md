@@ -7,7 +7,7 @@ Tags: wordpress, plugin, fonts, webfonts, performance, UX
 Requires at least: 4.7.0  
 Tested up to: 5.6  
 Requires PHP: 7.0  
-Stable tag: 1.0.16  
+Stable tag: 1.0.17  
 License: GNUv3 or later  
 License URI: https://www.gnu.org/licenses/gpl-3.0.html  
 GitHub Plugin URI: seezee/conditionally-load-cf7  
@@ -77,6 +77,11 @@ Would you like to help translate WP FOFT Loader into your own language? [You can
 
 == Changelog ==
 
+= 1.0.17 =
+
+* 2021-02-24
+* BUGFIX: Delete debugging code from class-cf7-conditional-settings
+* Add check for Contact Form 7 ReCaptcha module
 = 1.0.16 =
 
 * 2021-02-23
@@ -174,10 +179,8 @@ Would you like to help translate WP FOFT Loader into your own language? [You can
 
 == Upgrade Notice ==
 
-= 1.0.16 =
+= 1.0.17 =
 
-* 2021-02-23
-* BUGFIX: Fixed admin styles not loading
-* Add check for Contact Form CFDB7
-* Add check for Drag and Drop Multiple File Upload — Contact Form 7
-* Separate logic for scripts and styles
+* 2021-02-24
+* BUGFIX: Delete debugging code from class-cf7-conditional-settings
+* Add check for Contact Form 7 ReCaptcha module
