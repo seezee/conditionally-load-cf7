@@ -5,9 +5,9 @@ Author URI: https://github.com/seezee
 Plugin URI: https://wordpress.org/plugins/conditionally-load-cf7  
 Tags: wordpress, plugin, fonts, webfonts, performance, UX  
 Requires at least: 4.7.0  
-Tested up to: 5.6  
+Tested up to: 5.7  
 Requires PHP: 7.0  
-Stable tag: 1.0.18  
+Stable tag: 1.0.19  
 License: GNUv3 or later  
 License URI: https://www.gnu.org/licenses/gpl-3.0.html  
 GitHub Plugin URI: seezee/conditionally-load-cf7  
@@ -77,6 +77,10 @@ Would you like to help translate WP FOFT Loader into your own language? [You can
 
 == Changelog ==
 
+= 1.0.19 =
+
+* 2021-03-12
+* Tested up to WordPress 5.7
 = 1.0.18 =
 
 * 2021-02-24
@@ -183,7 +187,7 @@ Would you like to help translate WP FOFT Loader into your own language? [You can
 
 == Upgrade Notice ==
 
-= 1.0.18 =
+= 1.0.19 =
 
-* 2021-02-24
-* BUGFIX: Delete debugging code from main plugin file
+* 2021-03-12
+* Tested up to WordPress 5.7
