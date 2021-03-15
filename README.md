@@ -73,9 +73,14 @@ Feel free to send a donation to my [Paypal account](https://paypal.me/messengerw
 
 * English: Default language, always included
 
-Would you like to help translate WP FOFT Loader into your own language? [You can do that here!](https://translate.wordpress.org/projects/wp-plugins/cf7-conditional-load)
+Would you like to help translate Condtionally Load CF7 into your own language? [You can do that here!](https://translate.wordpress.org/projects/wp-plugins/cf7-conditional-load)
 
 == Changelog ==
+
+= 1.0.20 =
+
+* 2021-03-15
+* Update README
 
 = 1.0.19 =
 
@@ -187,7 +192,7 @@ Would you like to help translate WP FOFT Loader into your own language? [You can
 
 == Upgrade Notice ==
 
-= 1.0.19 =
+= 1.0.20 =
 
-* 2021-03-12
-* Tested up to WordPress 5.7
+* 2021-03-15
+* Update README
