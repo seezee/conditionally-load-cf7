@@ -5,9 +5,9 @@ Author URI: https://github.com/seezee
 Plugin URI: https://wordpress.org/plugins/conditionally-load-cf7  
 Tags: wordpress, plugin, fonts, webfonts, performance, UX  
 Requires at least: 4.7.0  
-Tested up to: 5.7  
+Tested up to: 5.7.1  
 Requires PHP: 7.0  
-Stable tag: 1.0.19  
+Stable tag: 1.0.21  
 License: GNUv3 or later  
 License URI: https://www.gnu.org/licenses/gpl-3.0.html  
 GitHub Plugin URI: seezee/conditionally-load-cf7  
@@ -77,6 +77,11 @@ Would you like to help translate Condtionally Load CF7 into your own language? [
 
 == Changelog ==
 
+= 1.0.21 =
+
+* 2021-04-21
+* Tested up to WordPress 5.7.1
+
 = 1.0.20 =
 
 * 2021-03-15
@@ -86,6 +91,7 @@ Would you like to help translate Condtionally Load CF7 into your own language? [
 
 * 2021-03-12
 * Tested up to WordPress 5.7
+
 = 1.0.18 =
 
 * 2021-02-24
@@ -95,6 +101,7 @@ Would you like to help translate Condtionally Load CF7 into your own language? [
 * 2021-02-24
 * BUGFIX: Delete debugging code from class-cf7-conditional-settings
 * Add check for Contact Form 7 ReCaptcha module
+
 = 1.0.16 =
 
 * 2021-02-23
@@ -185,14 +192,14 @@ Would you like to help translate Condtionally Load CF7 into your own language? [
 * 2020-03-18
 * BUGFIX: lower wp_enqueue_scripts priority so it fires after CF7
 
-= 1.0.2 =
+= 1.0.1 =
 
 * 2020-03-13
 * Initial release
 
 == Upgrade Notice ==
 
-= 1.0.20 =
+= 1.0.21 =
 
-* 2021-03-15
-* Update README
+* 2021-04-21
+* Tested up to WordPress 5.7.1
