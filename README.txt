@@ -7,7 +7,7 @@ Tags: wordpress, plugin, fonts, webfonts, performance, UX
 Requires at least: 4.7.0  
 Tested up to: 5.7.1  
 Requires PHP: 7.0  
-Stable tag: 1.0.21  
+Stable tag: 1.0.22  
 License: GNUv3 or later  
 License URI: https://www.gnu.org/licenses/gpl-3.0.html  
 GitHub Plugin URI: seezee/conditionally-load-cf7  
@@ -73,6 +73,11 @@ Feel free to send a donation to my [Paypal account](https://paypal.me/messengerw
 Would you like to help translate Conditionally Load CF7 into your own language? [You can do that here!](https://translate.wordpress.org/projects/wp-plugins/cf7-conditional-load)
 
 == Changelog ==
+
+= 1.0.22 =
+
+* 2021-05-13
+* Tested up to WordPress 5.7.2
 
 = 1.0.21 =
 
@@ -196,7 +201,7 @@ Would you like to help translate Conditionally Load CF7 into your own language? 
 
 == Upgrade Notice ==
 
-= 1.0.21 =
+= 1.0.22 =
 
-* 2021-04-21
-* Tested up to WordPress 5.7.1
+* 2021-05-13
+* Tested up to WordPress 5.7.2
