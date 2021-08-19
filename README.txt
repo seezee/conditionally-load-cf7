@@ -7,7 +7,7 @@ Tags: contact form 7, performance, javascript, css, scripts, styles, speed
 Requires at least: 4.7.0  
 Tested up to: 5.8  
 Requires PHP: 7.0  
-Stable tag: 1.0.24  
+Stable tag: 1.0.25  
 License: GNUv3 or later  
 License URI: https://www.gnu.org/licenses/gpl-3.0.html  
 GitHub Plugin URI: seezee/conditionally-load-cf7  
@@ -33,6 +33,7 @@ NEW in v1.0.15: The plugin also prevents scripts and styles from the following p
 3. Click “Install Now”
 4. Activate the plugin on the Plugin dashboard
 5. Go to Settings -> Conditionally Load CF7, upload your fonts, and configure the settings.
+6. Additional settings are available on individual post and page edit screens.
 
 ### UPLOADING IN WORDPRESS DASHBOARD
 1. Click the download button on this and save “conditionally-load-cf7.zip” to your computer
@@ -42,6 +43,7 @@ NEW in v1.0.15: The plugin also prevents scripts and styles from the following p
 5. Click “Install Now”
 6. Activate the plugin in the Plugin dashboard
 7. Go to Settings -> Conditionally Load CF7, upload your fonts, and configure the settings.
+8. Additional settings are available on individual post and page edit screens.
 
 ### USING FTP
 1. Download the Conditionally Load CF7 ZIP file
@@ -49,6 +51,7 @@ NEW in v1.0.15: The plugin also prevents scripts and styles from the following p
 3. Upload the “conditionally-load-cf7” directory to the `/wp-content/plugins/` directory
 4. Activate the plugin in the Plugin dashboard
 5. Go to Settings -> Conditionally Load CF7, upload your fonts, and configure the settings.
+6. Additional settings are available on individual post and page edit screens.
 
 ### DOWNLOAD FROM GITHUB
 1. Download the plugin via [https://github.com/seezee/conditionally-load-cf7](https://github.com/seezee/conditionally-load-cf7)
@@ -75,6 +78,13 @@ Feel free to send a donation to my [Paypal account](https://paypal.me/messengerw
 Would you like to help translate Conditionally Load CF7 into your own language? [You can do that here!](https://translate.wordpress.org/projects/wp-plugins/cf7-conditional-load)
 
 == Changelog ==
+
+= 1.0.25 =
+
+* 2021-08-19
+* NEW FEATURE: Added checkbox to post and page edit screens
+* NEW SETTING: Added archive unload option on main settings screen
+* Various code optimizations
 
 = 1.0.24 =
 
@@ -215,7 +225,9 @@ Would you like to help translate Conditionally Load CF7 into your own language? 
 
 == Upgrade Notice ==
 
-= 1.0.24 =
+= 1.0.25 =
 
-* 2021-07-23
-* Tested up to WordPress 5.8
+* 2021-08-19
+* NEW FEATURE: Added checkbox to post and page edit screens
+* NEW SETTING: Added archive unload option on main settings screen
+* Various code optimizations

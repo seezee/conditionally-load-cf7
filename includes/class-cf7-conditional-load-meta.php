@@ -62,7 +62,7 @@ class CF7_Conditional_Load_Meta {
 			return array_merge(
 				$links,
 				array(
-					'<a href="' . esc_url( $supportlink ) . '"> <span class="dashicons dashicons-format-chat" ' . $iconstyle . 'title="' . esc_attr_x( 'Conditionally Load CF7 Support', 'noun', 'cf7-conditional' ) . '" aria-label="' . esc_attr_x( 'Conditionally Load CF7 Support', 'noun', 'cf7-conditional' ) . '"></span></a>',
+					'<a href="' . esc_url( $supportlink ) . '"><span class="dashicons dashicons-format-chat" ' . $iconstyle . 'title="' . esc_attr_x( 'Conditionally Load CF7 Support', 'noun', 'cf7-conditional' ) . '" aria-label="' . esc_attr_x( 'Conditionally Load CF7 Support', 'noun', 'cf7-conditional' ) . '"></span></a>',
 					'<a href="' . esc_url( $twitterlink ) . '"><span class="dashicons dashicons-twitter" ' . $iconstyle . 'title="' . esc_attr__( 'Chris J. Zähller on Twitter', 'cf7-conditional' ) . '" aria-label="' . esc_attr__( 'Chris J. Zähller on Twitter', 'cf7-conditional' ) . '"></span></a>',
 					'<a href="' . esc_url( $reviewlink ) . '"><span class="dashicons dashicons-star-filled"' . $iconstyle . 'title="' . esc_attr__( 'Give a 5-Star Review', 'cf7-conditional' ) . '" aria-label="' . esc_attr__( 'Give a 5-Star Review', 'cf7-conditional' ) . '"></span></a>',
 					'<a href="' . esc_url( $donatelink ) . '"><span class="dashicons dashicons-heart"' . $iconstyle . 'title="' . esc_attr__( 'Donate', 'cf7-conditional' ) . '" aria-label="' . esc_attr__( 'Donate', 'cf7-conditional' ) . '"></span></a>',
@@ -98,7 +98,7 @@ class CF7_Conditional_Load_Meta {
 	 * @since 1.0.0
 	 */
 	public function __clone() {
-		_doing_it_wrong( __FUNCTION__, esc_html__( 'Cloning of CF7_Conditional_Load_Meta is forbidden.', 'cf7-conditional' ), esc_attr( CF7CL_VERSION ) );
+		_doing_it_wrong( __FUNCTION__, esc_html_e( 'Cloning of CF7_Conditional_Load_Meta is forbidden.', 'cf7-conditional' ), esc_attr( CF7CL_VERSION ) );
 	} // End __clone()
 
 	/**
@@ -107,7 +107,7 @@ class CF7_Conditional_Load_Meta {
 	 * @since 1.0.0
 	 */
 	public function __wakeup() {
-		_doing_it_wrong( __FUNCTION__, esc_html__( 'Unserializing instances of CF7_Conditional_Load_Meta is forbidden.', 'cf7-conditional' ), esc_attr( CF7CL_VERSION ) );
+		_doing_it_wrong( __FUNCTION__, esc_html_e( 'Unserializing instances of CF7_Conditional_Load_Meta is forbidden.', 'cf7-conditional' ), esc_attr( CF7CL_VERSION ) );
 	} // End __wakeup()
 
 }

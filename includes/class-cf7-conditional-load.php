@@ -99,7 +99,7 @@ class CF7_Conditional_Load {
 	 * @since 1.0.0
 	 */
 	public function __clone() {
-		_doing_it_wrong( __FUNCTION__, esc_html__( 'Cloning of Class_CF7_Conditional_Load is forbidden.', 'cf7-conditional' ), esc_html( CF7CL_VERSION ) );
+		_doing_it_wrong( __FUNCTION__, esc_html_e( 'Cloning of Class_CF7_Conditional_Load is forbidden.', 'cf7-conditional' ), esc_html( CF7CL_VERSION ) );
 	} // End __clone ()
 
 	/**
@@ -108,7 +108,7 @@ class CF7_Conditional_Load {
 	 * @since 1.0.0
 	 */
 	public function __wakeup() {
-		_doing_it_wrong( __FUNCTION__, esc_html__( 'Unserializing instances of Class_CF7_Conditional_Load is forbidden.', 'cf7-conditional' ), esc_html( CF7CL_VERSION ) );
+		_doing_it_wrong( __FUNCTION__, esc_html_e( 'Unserializing instances of Class_CF7_Conditional_Load is forbidden.', 'cf7-conditional' ), esc_html( CF7CL_VERSION ) );
 	} // End __wakeup ()
 
 }
