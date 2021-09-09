@@ -5,9 +5,9 @@ Author URI: https://github.com/seezee
 Plugin URI: https://wordpress.org/plugins/cf7-conditional-load/  
 Tags: contact form 7, performance, javascript, css, scripts, styles, speed  
 Requires at least: 4.7.0  
-Tested up to: 5.8  
+Tested up to: 5.8.1  
 Requires PHP: 7.0  
-Stable tag: 1.0.25  
+Stable tag: 1.0.26  
 License: GNUv3 or later  
 License URI: https://www.gnu.org/licenses/gpl-3.0.html  
 GitHub Plugin URI: seezee/conditionally-load-cf7  
@@ -78,6 +78,11 @@ Feel free to send a donation to my [Paypal account](https://paypal.me/messengerw
 Would you like to help translate Conditionally Load CF7 into your own language? [You can do that here!](https://translate.wordpress.org/projects/wp-plugins/cf7-conditional-load)
 
 == Changelog ==
+
+= 1.0.26 =
+
+* 2021-08-20
+* Tested up to WordPress 5.8.1
 
 = 1.0.25 =
 
@@ -225,9 +230,7 @@ Would you like to help translate Conditionally Load CF7 into your own language? 
 
 == Upgrade Notice ==
 
-= 1.0.25 =
+= 1.0.26 =
 
-* 2021-08-19
-* NEW FEATURE: Added checkbox to post and page edit screens
-* NEW SETTING: Added archive unload option on main settings screen
-* Various code optimizations
+* 2021-08-20
+* Tested up to WordPress 5.8.1
