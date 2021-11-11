@@ -224,6 +224,7 @@ function cf7cl_option_render() {
 
 	$posts = cf7cl_option_pages();
 
+	// We've already escaped this output, so ignore warnings.
 	echo '<label for="cf7cl_archive">Disable on archives? </label>' . cf7cl_archive_checkbox(); // phpcs:ignore
 	echo '<p>' . wp_kses( __( 'Disables Contact Form 7 on all archives, <em>including the home page</em> if it displays an archive. <em>Do not select this option</em> if you need to load contact forms on <em>any</em> archives.</p>', 'cf7-conditional' ), $arr ) . '</p><br><label for="cf7cl_conditional_load" style="display:block;margin-bottom:15px">' . wp_kses( __( '<abbr>ID</abbr>s and/or slugs', 'cf7-conditional' ), $arr ) . '</label><textarea rows="5" cols="50" placeholder="' . wp_kses( __( 'Load Contact Form 7 on these pages. Enter one page <abbr>ID</abbr> or slug per line.', 'cf7-conditional' ), $arr ) . '" name="cf7cl_conditional_load" id="cf7cl_conditional_load" value="' . esc_html( $posts ) . '">' . esc_html( $posts ) . '</textarea>';
 }
