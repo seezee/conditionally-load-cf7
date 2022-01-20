@@ -7,7 +7,7 @@ Tags: contact form 7, performance, javascript, css, scripts, styles, speed
 Requires at least: 4.7.0
 Tested up to: 5.8.3
 Requires PHP: 7.0
-Stable tag: 1.0.28
+Stable tag: 1.0.29
 License: GNUv3 or later
 License URI: https://www.gnu.org/licenses/gpl-3.0.html
 GitHub Plugin URI: seezee/conditionally-load-cf7
@@ -79,10 +79,15 @@ Would you like to help translate Conditionally Load CF7 into your own language? 
 
 == Changelog ==
 
+= 1.0.29 =
+
+* 2022-01-20
+* Add index.php
+
 = 1.0.28 =
 
-- 2022-01-10
-- Tested up to WordPress 5.8.3
+* 2022-01-10
+* Tested up to WordPress 5.8.3
 
 = 1.0.27 =
 
@@ -240,7 +245,7 @@ Would you like to help translate Conditionally Load CF7 into your own language? 
 
 == Upgrade Notice ==
 
-= 1.0.28 =
+= 1.0.29 =
 
-- 2022-01-10
-- Tested up to WordPress 5.8.3
+* 2022-01-20
+* Add index.php
