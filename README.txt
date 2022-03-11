@@ -5,7 +5,7 @@ Author URI: https://github.com/seezee
 Plugin URI: https://wordpress.org/plugins/cf7-conditional-load/
 Tags: contact form 7, performance, javascript, css, scripts, styles, speed
 Requires at least: 4.7.0
-Tested up to: 5.9.1
+Tested up to: 5.9.2
 Requires PHP: 7.0
 Stable tag: 1.0.32
 License: GNUv3 or later
