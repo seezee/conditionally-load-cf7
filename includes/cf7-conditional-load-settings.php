@@ -9,12 +9,12 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;// Exit if accessed directly.
 }
 
-$parent = null;
-
 add_action( 'admin_menu', 'cf7cl_add_page' );
 
 /**
- * Add the settings page.
+ * Add the settings page to the admin menu.
+ *
+ * @since 1.0.0
  */
 function cf7cl_add_page() {
 	$page_title = esc_html__( 'Conditionally Load CF7 Settings', 'cf7-conditional' );
@@ -33,23 +33,25 @@ function cf7cl_add_page() {
 }
 
 /**
- * Render the options.
+ * Render the options page.
+ *
+ * @since 1.0.0
  */
 function cf7cl_options_page() {
 	if ( current_user_can( 'delete_pages' ) ) {
 		?>
 <div class="wrap">
-  <h2><?php esc_html_e( 'Conditionally Load CF7', 'cf7-conditional' ); ?></h2>
-  <form action="options.php" method="post">
-    <?php settings_fields( 'cf7cl_conditional' ); // Render necessary invisible fields. ?>
-    <?php do_settings_sections( 'cf7cl_conditional' ); ?>
-    <input name="Submit" type="submit" value="<?php esc_attr_e( 'Save Changes', 'cf7-conditional' ); ?>" class="button button-primary" />
-  </form>
+	<h2><?php esc_html_e( 'Conditionally Load CF7', 'cf7-conditional' ); ?></h2>
+	<form action="options.php" method="post">
+		<?php settings_fields( 'cf7cl_conditional' ); // Render necessary invisible fields. ?>
+		<?php do_settings_sections( 'cf7cl_conditional' ); ?>
+	<input name="Submit" type="submit" value="<?php esc_attr_e( 'Save Changes', 'cf7-conditional' ); ?>" class="button button-primary" />
+	</form>
 </div>
-<?php
+		<?php
 	} else {
 		echo '<div class="wrap">
-	<h2>' . esc_html__( 'Forbidden', 'cf7cl_conditional-load' ) . '</h2>
+	<h2>' . esc_html__( 'Forbidden', 'cf7cl_conditional' ) . '</h2>
 	<p>' . esc_html__( 'Only users with Administrator or Editor privileges are permitted to change these settings. Possible reasons you are seeing this message:', 'cf7-conditional' ) . '</p>
 	<ul>
 		<li>' . esc_html__( 'You accidentally logged in as the wrong user', 'cf7-conditional' ) . '</li>
@@ -61,10 +63,13 @@ function cf7cl_options_page() {
 	}
 }
 
-add_action( 'admin_init', 'cf7cl_admin_init' );
+add_action( 'admin_menu', 'cf7cl_admin_init' );
 
 /**
- * Initialize the settings.
+ * Render the individual options.
+ *
+
+ * @since 1.0.0
  */
 function cf7cl_admin_init() {
 	// Create Setting.
@@ -97,9 +102,10 @@ function cf7cl_admin_init() {
 }
 
 /**
- * Validate textareas.
+ * Validate textareas and save the settings.
  *
  * @param string $input The form input.
+ * @since 1.0.0
  */
 function cf7cl_textarea_validate( $input ) {
 	$arr = array( 'abbr' => array() );
@@ -136,6 +142,7 @@ function cf7cl_textarea_validate( $input ) {
  * Validate checkboxes.
  *
  * @param string $input The form input.
+ * @since 1.0.0
  */
 function cf7cl_checkbox_validate( $input ) {
 		return ( isset( $input ) ? true : false );
@@ -143,6 +150,8 @@ function cf7cl_checkbox_validate( $input ) {
 
 /**
  * Display status.
+ *
+ * @since 1.0.0
  */
 function cf7cl_form_display_notice() {
 	settings_errors( 'cf7cl_conditional_load' );
@@ -151,7 +160,9 @@ function cf7cl_form_display_notice() {
 	add_action( 'admin_notices', 'cf7cl_form_display_notice' );
 
 /**
- * Sanitize HTML.
+ * Sanitize  and render the HTML.
+ *
+ * @since 1.0.25
  */
 function cf7cl_text() {
 	$arr = array(
@@ -167,6 +178,8 @@ function cf7cl_text() {
 
 /**
  * Retrieve the allowed pages array.
+ *
+ * @since 1.0.0
  */
 function cf7cl_option_pages() {
 	$posts = get_option( 'cf7cl_conditional_load', '' );
@@ -175,6 +188,8 @@ function cf7cl_option_pages() {
 
 /**
  * Which pages to load script on.
+ *
+ * @since 1.0.0
  */
 function cf7cl_option_result() {
 	$posts  = cf7cl_option_pages();
@@ -186,6 +201,7 @@ function cf7cl_option_result() {
 
 /**
  * Display the archive option checkbox.
+ * @since 1.0.25
  */
 function cf7cl_archive_checkbox() {
 	// Allowed HTML.
@@ -215,6 +231,8 @@ function cf7cl_archive_checkbox() {
 
 /**
  * Ensure saved options are persistently displayed in the form textarea.
+ *
+ * @since 1.0.0
  */
 function cf7cl_option_render() {
 	$arr = array(
@@ -231,6 +249,8 @@ function cf7cl_option_render() {
 
 /**
  * Load the Contact Form 7 scripts & styles only on the whitelisted pages.
+ *
+ * @since 1.0.0
  */
 function cf7cl_disable_wpcf7() {
 	// The string set by the textbox on the settings page.
@@ -258,9 +278,9 @@ function cf7cl_disable_wpcf7() {
 		// Is the page name, ID, or slug in the array? Is the metabox checkbox
 		// "checked"? If not, deregister! Also, deregister on archives if the
 		// settings checkbox is checked.
-			if ( ( ! is_page( $result ) && '0' === $meta ) || ( '0' !== $archive && is_archive() ) ) {
-				wp_dequeue_script( 'contact-form-7' );
-				wp_deregister_script( 'contact-form-7' );
+		if ( ( ! is_page( $result ) && '0' === $meta ) || ( '0' !== $archive && is_archive() ) ) {
+			wp_dequeue_script( 'contact-form-7' );
+			wp_deregister_script( 'contact-form-7' );
 		}
 	}
 
@@ -362,22 +382,24 @@ add_action( 'wp_enqueue_scripts', 'cf7cl_disable_wpcf7', 1000 ); // 1000 instead
 
 /**
  * Activation notice.
+ *
+ * @since 1.0.0
  */
 function cf7cl_error_notice() {
 	if ( is_plugin_active( plugin_dir_path( __FILE__ ) . 'contact-form-7/wp-contact-form-7.php' ) ) {
 		?>
 <div class="error notice is-dismissible">
-  <p>
-    <?php
+	<p>
+		<?php
 		esc_html_e( 'You have installed and activated the Contact Form 7 plugin.', 'cf7-conditional' );
 		echo ' <a href="' . esc_url( admin_url( 'options-general.php?page=cf7-conditional-load' ) );
 		echo '">';
 		esc_html_e( 'Please configure Conditionally Load CF7 Settings', 'cf7-conditional' );
 		echo '</a>.';
 		?>
-  </p>
+	</p>
 </div>
-<?php
+		<?php
 	}
 }
 

@@ -62,15 +62,15 @@ class CF7_Conditional_Load_Meta_Box {
 		wp_nonce_field( 'cf7cl_control_meta_box', 'cf7cl_control_meta_box_nonce' ); // Always add nonce to your meta boxes!
 		?>
 <h2>
-  <?php
+		<?php
 		// translators: the placeholder in this phrase is either "page" or "post".
 		printf( esc_html__( 'Load Contact Form 7 scripts &amp; styles on this %s.', 'cf7-conditional' ), esc_html( $post_type ) );
 		?>
 </h2>
 <p>
-  <label class="components-checkbox-control__label"><input type="checkbox" name="cf7cl_checkbox_value" value="1" <?php checked( $cf7cl_checkbox_value, 1 ); ?> /><?php esc_attr_e( 'Load CF7', 'cf7-conditional' ); ?></label>
+	<label class="components-checkbox-control__label"><input type="checkbox" name="cf7cl_checkbox_value" value="1" <?php checked( $cf7cl_checkbox_value, 1 ); ?> /><?php esc_attr_e( 'Load CF7', 'cf7-conditional' ); ?></label>
 </p>
-<?php
+		<?php
 	}
 
 	/**

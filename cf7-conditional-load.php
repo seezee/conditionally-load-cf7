@@ -1,13 +1,13 @@
 <?php
 /**
  * Plugin Name: Conditionally Load CF7
- * Version: 1.0.31
+ * Version: 1.0.32
  * Author URI: https://github.com/seezee
- * https://wordpress.org/plugins/cf7-conditional-load/
+ * Plugin URI: https://wordpress.org/plugins/cf7-conditional-load/
  * Description: In its default settings, Contact Form 7 loads its JavaScript and CSS stylesheet on every page. This slows page loading and taxes server and client resources. Use this plugin to control which pages the scripts load on.
  * Author: Chris J. Zähller / Messenger Web Design
  * Requires at least: 4.7.0
- * Tested up to: 5.9.1
+ * Tested up to: 5.9.2
  * PHP Version 7.0
  * Text Domain: cf7-conditional
  * Domain Path: /lang/
@@ -32,20 +32,20 @@ $error_close = '</div>';
 if ( ! defined( 'CF7CL_VERSION' ) ) {
 	define( 'CF7CL_VERSION', '' );
 } else {
-	$message = __( '<abb>CF7</abbr> Conditional Load ERROR! The <abbr>PHP</abbr> constant “CF7CL_VERSION” has already been defined. This could be due to a conflict with another plugin or theme. Please check your logs to debug.', 'cf7-conditional' );
+	$message = __( '<abb>CF7</abbr> Conditional Load ERROR! The <abbr>PHP</abbr> constant “CF7CL_VERSION” has already been defined. This could be due to a conflict with another plugin or theme. Please check your logs to debug.', 'conditionally-load-cf7-test' );
 	echo $error_open . wp_kses( $message, $arr ) . $error_close; // phpcs:ignore
 }
 // Load plugin files.
 if ( ! defined( 'CF7CL_PATH' ) ) {
 	define( 'CF7CL_PATH', plugin_dir_path( __FILE__ ) );
 } else {
-	$message = __( '<abb>CF7</abbr> Conditional Load ERROR! The <abbr>PHP</abbr> constant “CF7CL_CONDITIONAL_PATH” has already been defined. This could be due to a conflict with another plugin or theme. Please check your logs to debug.', 'cf7-conditional' );
+	$message = __( '<abb>CF7</abbr> Conditional Load ERROR! The <abbr>PHP</abbr> constant “CF7CL_CONDITIONAL_PATH” has already been defined. This could be due to a conflict with another plugin or theme. Please check your logs to debug.', 'conditionally-load-cf7-test' );
 	echo $error_open . wp_kses( $message, $arr ) . $error_close; // phpcs:ignore
 }
 if ( ! defined( 'CF7CL_URL' ) ) {
 	define( 'CF7CL_URL', plugin_dir_url( __FILE__ ) );
 } else {
-	$message = __( '<abb>CF7</abbr> Conditional Load ERROR! The <abbr>PHP</abbr> constant “CF7CL_URL” has already been defined. This could be due to a conflict with another plugin or theme. Please check your logs to debug.', 'cf7-conditional' );
+	$message = __( '<abb>CF7</abbr> Conditional Load ERROR! The <abbr>PHP</abbr> constant “CF7CL_URL” has already been defined. This could be due to a conflict with another plugin or theme. Please check your logs to debug.', 'conditionally-load-cf7-test' );
 	echo $error_open . wp_kses( $message, $arr ) . $error_close; // phpcs:ignore
 }
 
@@ -85,7 +85,7 @@ add_action( 'admin_enqueue_scripts', 'admin_enqueue_styles' );
  * Add menu links to the plugin entry in the plugins menu.
  *
  * @param string $links Menu links.
- * @param string $file The plugin file.
+ * @param string $file  The plugin file.
  */
 function cf7cl_action_links( $links, $file ) {
 	static $this_plugin;
@@ -98,7 +98,7 @@ function cf7cl_action_links( $links, $file ) {
 	if ( $file === $this_plugin ) {
 
 		// link to what ever you want.
-		$plugin_links[] = '<a href="' . esc_url( 'options-general.php?page=cf7-conditional-load' ) . '">' . __( 'Settings', 'cf7-conditional' ) . '</a>';
+		$plugin_links[] = '<a href="' . esc_url( 'options-general.php?page=cf7-conditional-load' ) . '">' . __( 'Settings', 'conditionally-load-cf7-test' ) . '</a>';
 
 		// add the links to the list of links already there.
 		foreach ( $plugin_links as $link ) {
