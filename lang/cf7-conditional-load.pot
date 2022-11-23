@@ -2,23 +2,27 @@
 # This file is distributed under the same license as the Conditionally Load CF7 plugin.
 msgid ""
 msgstr ""
-"Project-Id-Version: Conditionally Load CF7 1.0.35\n"
+"Project-Id-Version: Conditionally Load CF7 1.0.36\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/cf7-conditional-load\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2022-01-10T17:02:21+00:00\n"
+"POT-Creation-Date: 2022-11-23T19:21:42+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.4.0\n"
 "X-Domain: cf7-conditional\n"
 
 #. Plugin Name of the plugin
 #: includes/cf7-conditional-load-settings.php:21
-#: includes/cf7-conditional-load-settings.php:42
+#: includes/cf7-conditional-load-settings.php:44
 #: includes/class-cf7-conditional-load-meta-box.php:44
 msgid "Conditionally Load CF7"
+msgstr ""
+
+#. Plugin URI of the plugin
+msgid "https://wordpress.org/plugins/cf7-conditional-load/"
 msgstr ""
 
 #. Description of the plugin
@@ -33,123 +37,107 @@ msgstr ""
 msgid "https://github.com/seezee"
 msgstr ""
 
-#: cf7-conditional-load.php:35
-msgid "<abb>CF7</abbr> Conditional Load ERROR! The <abbr>PHP</abbr> constant “CF7CL_VERSION” has already been defined. This could be due to a conflict with another plugin or theme. Please check your logs to debug."
-msgstr ""
-
-#: cf7-conditional-load.php:42
-msgid "<abb>CF7</abbr> Conditional Load ERROR! The <abbr>PHP</abbr> constant “CF7CL_CONDITIONAL_PATH” has already been defined. This could be due to a conflict with another plugin or theme. Please check your logs to debug."
-msgstr ""
-
-#: cf7-conditional-load.php:48
-msgid "<abb>CF7</abbr> Conditional Load ERROR! The <abbr>PHP</abbr> constant “CF7CL_URL” has already been defined. This could be due to a conflict with another plugin or theme. Please check your logs to debug."
-msgstr ""
-
-#: cf7-conditional-load.php:101
-msgid "Settings"
-msgstr ""
-
 #: includes/cf7-conditional-load-settings.php:20
 msgid "Conditionally Load CF7 Settings"
 msgstr ""
 
-#: includes/cf7-conditional-load-settings.php:46
+#: includes/cf7-conditional-load-settings.php:48
 msgid "Save Changes"
 msgstr ""
 
-#: includes/cf7-conditional-load-settings.php:53
+#: includes/cf7-conditional-load-settings.php:55
 msgid "Only users with Administrator or Editor privileges are permitted to change these settings. Possible reasons you are seeing this message:"
 msgstr ""
 
-#: includes/cf7-conditional-load-settings.php:55
+#: includes/cf7-conditional-load-settings.php:57
 msgid "You accidentally logged in as the wrong user"
 msgstr ""
 
-#: includes/cf7-conditional-load-settings.php:56
+#: includes/cf7-conditional-load-settings.php:58
 msgid "Your account isn’t an Administrator or Editor account"
 msgstr ""
 
-#: includes/cf7-conditional-load-settings.php:57
+#: includes/cf7-conditional-load-settings.php:59
 msgid "An admistrator changed your account level"
 msgstr ""
 
-#: includes/cf7-conditional-load-settings.php:59
+#: includes/cf7-conditional-load-settings.php:61
 msgid "Please log in as an Administrator or Editor or contact the site adminstrator to resolve this issue."
 msgstr ""
 
-#: includes/cf7-conditional-load-settings.php:79
+#: includes/cf7-conditional-load-settings.php:84
 msgid "Load Contact Form 7 scripts only on pages that need them"
 msgstr ""
 
-#: includes/cf7-conditional-load-settings.php:112
+#: includes/cf7-conditional-load-settings.php:118
 msgid "Congratulations! Your settings were successfully saved!"
 msgstr ""
 
-#: includes/cf7-conditional-load-settings.php:121
+#: includes/cf7-conditional-load-settings.php:127
 msgid "Please enter page <abbr>ID</abbr>s (numerical) or page slugs (lowercase letters, numerals, &amp; hyphens) only. One <abbr>ID</abbr> per line. No spaces or other characters allowed."
 msgstr ""
 
-#: includes/cf7-conditional-load-settings.php:165
+#: includes/cf7-conditional-load-settings.php:176
 msgid "In its default settings, Contact Form 7 loads its JavaScript and CSS stylesheet on every page. This slows page loading and taxes server and client resources. In worst case scenarios, slow page loading can harm your <abbr>SEO</abbr> or drive away potential users. This setting gives you control over which pages the scripts load on."
 msgstr ""
 
-#: includes/cf7-conditional-load-settings.php:165
+#: includes/cf7-conditional-load-settings.php:176
 msgid "Additionally, this plugin prevents the following plugins from loading their scripts and styles:"
 msgstr ""
 
-#: includes/cf7-conditional-load-settings.php:165
+#: includes/cf7-conditional-load-settings.php:176
 msgid "If you are using any other plugin that extends Contact Form 7 and loads its scripts on all pages, please <a href=\"https://wordpress.org/support/plugin/cf7-conditional-load/\" target=\"_blank\" rel=\"external noopener noreferrer\">open a support ticket</a> and we will look into adding it."
 msgstr ""
 
-#: includes/cf7-conditional-load-settings.php:165
+#: includes/cf7-conditional-load-settings.php:176
 msgid "Figure 1.: How to find a page or post ID"
 msgstr ""
 
-#: includes/cf7-conditional-load-settings.php:165
+#: includes/cf7-conditional-load-settings.php:176
 msgid "Figure 1.: This is the page (or post) <abbr>ID</abbr>."
 msgstr ""
 
-#: includes/cf7-conditional-load-settings.php:165
+#: includes/cf7-conditional-load-settings.php:176
 msgid "Figure 2.: How to find a page or post slug"
 msgstr ""
 
-#: includes/cf7-conditional-load-settings.php:165
+#: includes/cf7-conditional-load-settings.php:176
 msgid "Figure 2.: This is the page (or post) slug."
 msgstr ""
 
-#: includes/cf7-conditional-load-settings.php:165
+#: includes/cf7-conditional-load-settings.php:176
 msgid "Figure 3.: You can also load <abbr>CF7</abbr> scripts and styles by ticking the checkbox in the meta box on any page or post"
 msgstr ""
 
-#: includes/cf7-conditional-load-settings.php:165
+#: includes/cf7-conditional-load-settings.php:176
 msgid "Figure 3.: You can also load <abbr>CF7</abbr> scripts and styles by ticking the checkbox in the meta box on any page or post."
 msgstr ""
 
-#: includes/cf7-conditional-load-settings.php:165
+#: includes/cf7-conditional-load-settings.php:176
 msgid "Enter a list of the page <abbr>ID</abbr>s (numerical) or page slugs (lowercase letters, numerals, &amp; hyphens) where you want to load the stylesheet and javascript for Contact Form 7. One page <abbr>ID</abbr> or slug per line. See Figures 1 and 2."
 msgstr ""
 
-#: includes/cf7-conditional-load-settings.php:165
+#: includes/cf7-conditional-load-settings.php:176
 msgid "Additionally, you may enable <abbr>CF7</abbr> from any individual post or page editor screen. See Figure 3."
 msgstr ""
 
-#: includes/cf7-conditional-load-settings.php:229
+#: includes/cf7-conditional-load-settings.php:247
 msgid "Disables Contact Form 7 on all archives, <em>including the home page</em> if it displays an archive. <em>Do not select this option</em> if you need to load contact forms on <em>any</em> archives.</p>"
 msgstr ""
 
-#: includes/cf7-conditional-load-settings.php:229
+#: includes/cf7-conditional-load-settings.php:247
 msgid "<abbr>ID</abbr>s and/or slugs"
 msgstr ""
 
-#: includes/cf7-conditional-load-settings.php:229
+#: includes/cf7-conditional-load-settings.php:247
 msgid "Load Contact Form 7 on these pages. Enter one page <abbr>ID</abbr> or slug per line."
 msgstr ""
 
-#: includes/cf7-conditional-load-settings.php:372
+#: includes/cf7-conditional-load-settings.php:394
 msgid "You have installed and activated the Contact Form 7 plugin."
 msgstr ""
 
-#: includes/cf7-conditional-load-settings.php:375
+#: includes/cf7-conditional-load-settings.php:397
 msgid "Please configure Conditionally Load CF7 Settings"
 msgstr ""
 
