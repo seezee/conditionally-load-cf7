@@ -7,7 +7,7 @@ Tags: contact form 7, performance, javascript, css, scripts, styles, speed
 Requires at least: 4.7.0
 Tested up to: 6.1.1
 Requires PHP: 7.0
-Stable tag: 1.0.36
+Stable tag: 1.0.37
 License: GNUv3 or later
 License URI: https://www.gnu.org/licenses/gpl-3.0.html
 GitHub Plugin URI: seezee/conditionally-load-cf7
@@ -79,30 +79,35 @@ Would you like to help translate Conditionally Load CF7 into your own language? 
 
 == Changelog ==
 
+= 1.0.37 =
+
+* 2022-12-04
+* Add google-recaptcha.js to parsed scripts
+
 = 1.0.36 =
 
-- 2022-11-23
-- Tested up to WordPress 6.1.1
+* 2022-11-23
+* Tested up to WordPress 6.1.1
 
 = 1.0.35 =
 
-- 2022-07-24
-- Tested up to WordPress 6.0.1
+* 2022-07-24
+* Tested up to WordPress 6.0.1
 
 = 1.0.34 =
 
-- 2022-05-27
-- Tested up to WordPress 6.0.0
+* 2022-05-27
+* Tested up to WordPress 6.0.0
 
 = 1.0.33 =
 
-- 2022-04-05
-- Tested up to WordPress 5.9.3
+* 2022-04-05
+* Tested up to WordPress 5.9.3
 
 = 1.0.32 =
 
-- 2022-03-11
-- Tested up to WordPress 5.9.2
+* 2022-03-11
+* Tested up to WordPress 5.9.2
 
 = 1.0.31 =
 
@@ -280,7 +285,7 @@ Would you like to help translate Conditionally Load CF7 into your own language? 
 
 == Upgrade Notice ==
 
-= 1.0.36 =
+= 1.0.37 =
 
-- 2022-11-23
-- Tested up to WordPress 6.1.1
+* 2022-12-04
+* Add google-recaptcha.js to parsed scripts

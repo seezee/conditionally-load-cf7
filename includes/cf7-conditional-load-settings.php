@@ -56,7 +56,7 @@ function cf7cl_options_page() {
 	<ul>
 		<li>' . esc_html__( 'You accidentally logged in as the wrong user', 'cf7-conditional' ) . '</li>
 		<li>' . esc_html__( 'Your account isn’t an Administrator or Editor account', 'cf7-conditional' ) . '</li>
-		<li>' . esc_html__( 'An admistrator changed your account level', 'cf7-conditional' ) . '</li>
+		<li>' . esc_html__( 'An administrator changed your account level', 'cf7-conditional' ) . '</li>
 	</ul>
 	<p>' . esc_html__( 'Please log in as an Administrator or Editor or contact the site adminstrator to resolve this issue.', 'cf7-conditional' ) . '</p>
 </div>';
@@ -298,6 +298,13 @@ function cf7cl_disable_wpcf7() {
 		}
 	}
 
+	if ( ( wp_script_is( 'google-recaptcha', 'enqueued' ) ) && ( wp_script_is( 'google-recaptcha', 'registered' ) ) ) {
+		if ( ( ! is_page( $result ) && '0' === $meta ) || ( '0' !== $archive && is_archive() ) ) {
+			wp_dequeue_script( 'google-recaptcha' );
+			wp_deregister_script( 'google-recaptcha' );
+		}
+	}
+
 	// CF7 Multi-Step scripts.
 	if ( ( wp_script_is( 'cf7msm', 'enqueued' ) ) && ( wp_script_is( 'cf7msm', 'registered' ) ) ) {
 		if ( ( ! is_page( $result ) && '0' === $meta ) || ( '0' !== $archive && is_archive() ) ) {
@@ -402,5 +409,3 @@ function cf7cl_error_notice() {
 		<?php
 	}
 }
-
-add_action( 'admin_notices', 'cf7cl_error_notice' );
