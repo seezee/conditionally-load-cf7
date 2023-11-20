@@ -1,7 +1,7 @@
 <?php
 /**
  * Plugin Name: Conditionally Load CF7
- * Version: 1.0.39
+ * Version: 1.0.40
  * Author URI: https://github.com/seezee
  * Plugin URI: https://wordpress.org/plugins/cf7-conditional-load/
  * Description: In its default settings, Contact Form 7 loads its JavaScript and CSS stylesheet on every page. This slows page loading and taxes server and client resources. Use this plugin to control which pages the scripts load on.

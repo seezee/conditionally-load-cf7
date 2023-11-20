@@ -5,9 +5,9 @@ Author URI: https://github.com/seezee
 Plugin URI: https://wordpress.org/plugins/cf7-conditional-load/
 Tags: contact form 7, performance, javascript, css, scripts, styles, speed
 Requires at least: 4.7.0
-Tested up to: 6.3
+Tested up to: 6.4.1
 Requires PHP: 7.0
-Stable tag: 1.0.39
+Stable tag: 1.0.40
 License: GNUv3 or later
 License URI: https://www.gnu.org/licenses/gpl-3.0.html
 GitHub Plugin URI: seezee/conditionally-load-cf7
@@ -79,10 +79,15 @@ Would you like to help translate Conditionally Load CF7 into your own language? 
 
 == Changelog ==
 
+= 1.0.40 =
+
+* 2023-11-20
+* Tested up to WordPress 6.4.1
+
 = 1.0.39 =
 
-- 2023-08-28
-- Tested up to WordPress 6.3
+* 2023-08-28
+* Tested up to WordPress 6.3
 
 = 1.0.38 =
 
@@ -267,7 +272,7 @@ Would you like to help translate Conditionally Load CF7 into your own language? 
 = 1.0.5 =
 
 * 2020-03-25
-* Remove surrounding underscores from contant 'CF7CL_PATH' to meet WordPress coding standards
+* Remove surrounding underscores from constant 'CF7CL_PATH' to meet WordPress coding standards
 * Add POT file
 
 = 1.0.4 =
@@ -295,7 +300,7 @@ Would you like to help translate Conditionally Load CF7 into your own language? 
 
 == Upgrade Notice ==
 
-= 1.0.39 =
+= 1.0.40 =
 
-- 2023-08-28
-- Tested up to WordPress 6.3
+* 2023-11-20
+* Tested up to WordPress 6.4.1
