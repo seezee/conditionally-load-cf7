@@ -6,7 +6,7 @@ Author URI: [https://github.com/seezee](https://github.com/seezee)
 Plugin URI: [https://wordpress.org/plugins/conditionally-load-cf7](https://wordpress.org/plugins/conditionally-load-cf7)  
 Tags: contact form 7, performance, javascript, css  
 Requires at least: 4.7.0  
-Tested up to: 6.5.3  
+Tested up to: 6.6.1  
 Requires PHP: 7.0  
 Stable tag: 1.0.45  
 License: GPLv2 or later  
