@@ -3,7 +3,7 @@
 Contributors: seezee  
 Donate link: [https://messengerwebdesign.com/donate](https://messengerwebdesign.com/donate)  
 Author URI: [https://github.com/seezee](https://github.com/seezee)  
-Plugin URI: [https://wordpress.org/plugins/conditionally-load-cf7](https://wordpress.org/plugins/conditionally-load-cf7)  
+Plugin URI: [https://messengerwebdesign.com/plugins/](https://messengerwebdesign.com/plugins/)  
 Tags: contact form 7, performance, javascript, css  
 Requires at least: 4.7.0  
 Tested up to: 6.9  
