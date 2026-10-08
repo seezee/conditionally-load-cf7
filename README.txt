@@ -5,9 +5,9 @@ Author URI: https://github.com/seezee
 Plugin URI: https://messengerwebdesign.com/plugins/
 Tags: contact form 7, performance, javascript, css, scripts
 Requires at least: 4.7.0
-Tested up to: 6.9
-Requires PHP: 7.0
-Stable tag: 1.0.47
+Tested up to: 7.1.3
+Requires PHP: 7.4
+Stable tag: 1.0.48
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 GitHub Plugin URI: seezee/conditionally-load-cf7
@@ -78,6 +78,11 @@ Feel free to send a donation to my [Paypal account](https://paypal.me/messengerw
 Would you like to help translate Conditionally Load CF7 into your own language? [You can do that here!](https://translate.wordpress.org/projects/wp-plugins/cf7-conditional-load)
 
 == Changelog ==
+
+= 1.0.48 =
+
+- 2026-10-06
+- Tested up to WordPress 7.1.3
 
 = 1.0.47 =
 
@@ -335,7 +340,7 @@ Would you like to help translate Conditionally Load CF7 into your own language? 
 
 ## Upgrade Notice
 
-= 1.0.47 =
+= 1.0.48 =
 
-- 2025-12-16
-- Tested up to WordPress 6.9
+- 2026-10-06
+- Tested up to WordPress 7.1.3
